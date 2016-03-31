@@ -8,7 +8,7 @@ class Character(models.Model):
     """
     This is the main model for character sheets
     """
-    
+
     character_name = models.CharField(max_length=100)
     char_class = models.CharField()
     player_name = models.CharField(max_length=100)
@@ -18,6 +18,9 @@ class Character(models.Model):
 
 
 class Character_Class(models.Model):
+    """
+    Character Class models, Many to One field for character classes
+    """
     char_class = models.CharField()
     level = models.IntegerField()
     character = models.ForeignKey(Character)
