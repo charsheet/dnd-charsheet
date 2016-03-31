@@ -5,6 +5,10 @@ from django.db import models
 # Create your models here.
 
 class Character(models.Model):
+    """
+    This is the main model for character sheets
+    """
+    
     character_name = models.CharField(max_length=100)
     char_class = models.CharField()
     player_name = models.CharField(max_length=100)
