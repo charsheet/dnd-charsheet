@@ -10,10 +10,35 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: charsheet_character
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: charsheet_character_class
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: charsheet_characterclass
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: charsheet_spells
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: cspreports_cspreport
   properties:
   - name: created
     direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: djangae_gaedatastoreuser
+  properties:
   - name: __key__
     direction: desc
 
