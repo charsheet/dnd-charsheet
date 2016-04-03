@@ -1,7 +1,10 @@
-{% if charsheet_list %}
-<ul>
-  {% for charsheet in charsheet_list %}
-  <li><a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a></li>
-  {% endfor %}
-</ul>
-{% endif %}
+{% extends "base.html" %}
+{% block content %}
+  {% if charsheet_list %}
+  <ul>
+    {% for charsheet in charsheet_list %}
+    <li><a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock content %}
