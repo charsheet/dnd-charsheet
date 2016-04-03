@@ -1,11 +1,13 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
 from django.contrib.auth.models import User
 
 # Create your models here.
 
+@python_2_unicode_compatible
 class Character(models.Model):
     """
     This is the main model for character sheets
@@ -98,6 +100,9 @@ class Character(models.Model):
     spellcasting_ability = models.CharField(max_length=50, blank=True)
     spell_save_dc = models.IntegerField(null=True, blank=True)
     spell_attack_bonus = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.character_name
 
 
 class CharacterClass(models.Model):
