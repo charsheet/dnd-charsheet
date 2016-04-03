@@ -13,6 +13,10 @@ handlers:
   static_dir: sitepackages/django/contrib/admin/static/admin/
   secure: always
 
+- url: /static/charsheet
+  static_dir: static/charsheet
+  secure: always
+
 # Set Django admin to be login:admin as well as Django's is_staff restriction
 - url: /admin.*
   script: dndcharsheet.wsgi.application
