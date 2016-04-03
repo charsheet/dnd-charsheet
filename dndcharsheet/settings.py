@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'djangae.contrib.gauth.datastore',
     'djangae.contrib.security',
     # 'djangae.contrib.uniquetool',
+    'charsheet.apps.CharsheetConfig'
 )
 
 MIDDLEWARE_CLASSES = (
