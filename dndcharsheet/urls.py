@@ -6,9 +6,13 @@ session_csrf.monkeypatch()
 from django.contrib import admin
 admin.autodiscover()
 
+from charsheet import views
+
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'dndcharsheet.views.home', name='home'),
+     url(r'^$', views.IndexView.as_view(), name='index'),
+     url(r'^(?P<pk>[0-9]+)/$', views.CharacterDetailView.as_view(), name='detail'),
+
     # url(r'^blog/', include('blog.urls')),
     url(r'^_ah/', include('djangae.urls')),
 
