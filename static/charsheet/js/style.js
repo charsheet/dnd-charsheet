@@ -1,3 +1,5 @@
-$(document).ready(function() {
-    $("#str").fadeOut(1000);
+$(document).ready(function(){
+    $("#str").click(function(){
+        $(this).hide();
+	});
 });
