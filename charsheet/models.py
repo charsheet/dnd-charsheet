@@ -17,9 +17,9 @@ class Character(models.Model):
     # not working - with dev at least
 
     # Char Details
+    player_name = models.CharField(max_length=100, blank=True)
     character_name = models.CharField(max_length=100)
     background = models.CharField(max_length=200, blank=True)
-    player_name = models.CharField(max_length=100, blank=True)
     race = models.CharField(max_length=200, blank=True)
     alignment = models.CharField(max_length=200, blank=True)
     experience_points = models.IntegerField(null=True, blank=True)
@@ -60,7 +60,7 @@ class Character(models.Model):
     treasure = models.TextField(blank=True) # Not sure if i want this to be a TextField
 
     # Main Stats
-    srength = models.IntegerField(null=True, blank=True)
+    strength = models.IntegerField(null=True, blank=True)
     dexterity = models.IntegerField(null=True, blank=True)
     constitution = models.IntegerField(null=True, blank=True)
     intelligence = models.IntegerField(null=True, blank=True)

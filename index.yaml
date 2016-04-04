@@ -30,6 +30,11 @@ indexes:
   - name: __key__
     direction: desc
 
+- kind: charsheet_equipment
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: charsheet_spells
   properties:
   - name: __key__
