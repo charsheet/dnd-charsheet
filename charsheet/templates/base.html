@@ -20,7 +20,11 @@
 
   <body>
     <div class="container-fluid">
-        {% block content %}{% endblock %}
+      {% block header %}
+        {% block navbar %}{% endblock navbar %}
+      {% endblock header %}
+      {% block content %}{% endblock content %}      
+      {% block footer %}{% endblock footer %}      
     </div>
   </body>
 </html>
