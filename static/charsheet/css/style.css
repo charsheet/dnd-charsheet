@@ -29,6 +29,15 @@
 	width: 15%;
 }
 
+.char_container {
+	text-align: center;
+	position: relative;
+	font-family: 'Muli', sans-serif;
+	font-size: 20px;
+	width: 10%;
+	font-weight: bold, italic;
+}
+
 .stat_bar {
 	text-align: center;
 	position: relative;
