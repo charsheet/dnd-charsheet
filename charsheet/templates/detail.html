@@ -6,6 +6,7 @@
 		<script src="{% static 'charsheet/js/style.js' %}"></script>
 	{% endblock scripts %}
 
+<<<<<<< HEAD
 {% block content %}
 	<div>
 		{{ character.player_name}}
@@ -73,5 +74,94 @@
 		{{ character.}}
 		{{ character.}}
 		{{ character.}}
+=======
+{% block charname %}
+	{{ character.character_name }}
+{% endblock charname %}
+{% block content %}
+	<div class="top_space">
+	</div>
+	<!-- Basic Character Information -->
+	<div class="stat_bar">
+		<!--
+		<div>
+			{{ character.player_name}}
+		</div>
+		
+		<div>
+			{{ characterclass.level}}
+		</div>
+		<div>
+			{{ characterclass.char_class}}
+		</div>
+		-->
+		<div>
+			{{ character.race}}
+		</div>
+		<div>
+			{{ character.background }}
+		</div>
+		<div>
+			{{ character.alignment}}
+		</div>
+	</div>
+
+
+	<!-- Stat container with modifiers -->
+	<div class="stat_bar">
+		<div class="stat_text">
+			Strength
+		</div>
+		<div>
+			{{ character.strength}}<br />
+		</div>
+			<br />
+			Dexterity<br />
+			{{ character.dexterity}}<br />
+			<br />
+			Constitution<br />
+			{{ character.constitution}}<br />
+			<br />
+			Intelligence<br />
+			{{ character.intelligence}}<br />
+			<br />
+			Wisdom<br />
+			{{ character.wisdom}}<br />
+			<br />
+			Charisma<br />
+			{{ character.charisma}}<br />
+			<br />
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
+>>>>>>> 80d7f48aaff1a75e14b4155961de7b8863fa0163
 	</div>
 {% endblock content %}
