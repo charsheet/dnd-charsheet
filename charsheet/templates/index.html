@@ -1,13 +1,18 @@
 {% extends "base.html" %}
-<div>
+
+<body>
 	{% block content %}
-	  {% if charsheet_list %}
-	  <ul>
-	    {% for charsheet in charsheet_list %}
-	    <li><a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a></li>
-	    {% endfor %}
-	  </ul>
-	  {% endif %}
+    <div class="top_space">
+    	{% if charsheet_list %}
+    		<div class="title_large">
+    			Characters
+    		</div>
+        <div class="char_name">
+			    {% for charsheet in charsheet_list %}
+			    	<a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a>
+			    {% endfor %}
+        </div>
+			{% endif %}
+    </div>
 	{% endblock content %}
-	{% block footer %}Copyright 2020{% endblock footer %}
-</div>
+</body>

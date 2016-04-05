@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', views.IndexView.as_view(), name='index'),
      url(r'^(?P<pk>[0-9]+)/$', views.CharacterDetailView.as_view(), name='detail'),
+     url(r'^(?P<pk>[0-9]+)/update$', views.CharacterUpdateView.as_view(), name='update'),
 
     # url(r'^blog/', include('blog.urls')),
     url(r'^_ah/', include('djangae.urls')),
