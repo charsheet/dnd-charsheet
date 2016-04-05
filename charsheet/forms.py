@@ -6,6 +6,7 @@ class CharacterForm(forms.ModelForm):
 
     class Meta:
         model = Character
+        #fields = []
         exclude = ['id']
 
     def __init__(self, *args, **kwargs):

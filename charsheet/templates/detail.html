@@ -6,6 +6,75 @@
 		<script src="{% static 'charsheet/js/style.js' %}"></script>
 	{% endblock scripts %}
 
+<<<<<<< HEAD
+{% block content %}
+	<div>
+		{{ character.player_name}}
+	</div>
+	<br />
+	<div class="form-control input-lg">
+		{{ character.character_name }}
+	</div>
+	<div>
+		{{ characterclass.level}}
+		{{ character.race}}
+		{#  {{ characterclass.char_class}}  #}
+		{{ character.background }}
+		{{ character.alignment}}
+	</div>
+	<br />
+
+	<div id="str">
+		Strength<br />
+		{{ character.strength}}<br />
+	</div>
+		<br />
+		Dexterity<br />
+		{{ character.dexterity}}<br />
+		<br />
+		Constitution<br />
+		{{ character.constitution}}<br />
+		<br />
+		Intelligence<br />
+		{{ character.intelligence}}<br />
+		<br />
+		Wisdom<br />
+		{{ character.wisdom}}<br />
+		<br />
+		Charisma<br />
+		{{ character.charisma}}<br />
+		<br />
+	</div>
+	<div>
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+	</div>
+	<div>
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+	</div>
+	<div>
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+		{{ character.}}
+=======
 {% block charname %}
 	{{ character.character_name }}
 {% endblock charname %}
@@ -93,5 +162,6 @@
 			{{ character.}}
 			{{ character.}}
 		</div>
+>>>>>>> 80d7f48aaff1a75e14b4155961de7b8863fa0163
 	</div>
 {% endblock content %}

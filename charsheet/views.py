@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.views import generic
 
 from .models import Character
@@ -15,5 +16,10 @@ class IndexView(generic.ListView):
 
 class CharacterDetailView(generic.DetailView):
     model = Character
-    #success_url = 'SUCCESS_URL'
     template_name = 'detail.html'
+
+class CharacterUpdateView(generic.UpdateView):
+    model = Character
+    form_class = CharacterForm
+    template_name = 'update.html'
+    success_url = 'update'
