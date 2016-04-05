@@ -1,0 +1,24 @@
+p {
+	padding-top: 30px;
+	padding-left: 25px;
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: left;
+}
+
+h4 {
+	padding-left: 50px;
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	text-align: left;
+}
+
+.footer {
+	text-align: right;
+	position: fixed;
+	bottom: 0;
+	width:100%;
+	padding-bottom: 25px;
+	padding-right: 45px;
+	}

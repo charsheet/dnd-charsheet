@@ -6,22 +6,30 @@
 		<script src="{% static 'charsheet/js/style.js' %}"></script>
 	{% endblock scripts %}
 
+{% block charname %}{{ character.character_name }}{% endblock charname %}
+
 {% block content %}
+	<!--
 	<div>
 		{{ character.player_name}}
 	</div>
-	<br />
-	<div class="form-control input-lg">
-		{{ character.character_name }}
-	</div>
+	
 	<div>
 		{{ characterclass.level}}
+	</div>
+	<div>
+		{{ characterclass.char_class}}
+	</div>
+	-->
+	<div>
 		{{ character.race}}
-		{#  {{ characterclass.char_class}}  #}
+	</div>
+	<div>
 		{{ character.background }}
+	</div>
+	<div>
 		{{ character.alignment}}
 	</div>
-	<br />
 
 	<div id="str">
 		Strength<br />
