@@ -2,26 +2,17 @@
 
 <body>
 	{% block content %}
-    <p class="lead">
+    <div class="top_space">
     	{% if charsheet_list %}
-    		<p>
-    			Characters:
-    		</p>
-    		<div>
-    			
+    		<div class="title_large">
+    			Characters
     		</div>
-    		<div>
-    			
-    		</div>
-    		<div>
-    			
-    		</div>
-    		<h4>
+        <div class="char_name">
 			    {% for charsheet in charsheet_list %}
 			    	<a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a>
 			    {% endfor %}
-		    </h5>
+        </div>
 			{% endif %}
-		</p>
+    </div>
 	{% endblock content %}
 </body>

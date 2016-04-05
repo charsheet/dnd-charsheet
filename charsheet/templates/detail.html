@@ -6,80 +6,92 @@
 		<script src="{% static 'charsheet/js/style.js' %}"></script>
 	{% endblock scripts %}
 
-{% block charname %}{{ character.character_name }}{% endblock charname %}
-
+{% block charname %}
+	{{ character.character_name }}
+{% endblock charname %}
 {% block content %}
-	<!--
-	<div>
-		{{ character.player_name}}
+	<div class="top_space">
 	</div>
-	
-	<div>
-		{{ characterclass.level}}
-	</div>
-	<div>
-		{{ characterclass.char_class}}
-	</div>
-	-->
-	<div>
-		{{ character.race}}
-	</div>
-	<div>
-		{{ character.background }}
-	</div>
-	<div>
-		{{ character.alignment}}
+	<!-- Basic Character Information -->
+	<div class="stat_bar">
+		<!--
+		<div>
+			{{ character.player_name}}
+		</div>
+		
+		<div>
+			{{ characterclass.level}}
+		</div>
+		<div>
+			{{ characterclass.char_class}}
+		</div>
+		-->
+		<div>
+			{{ character.race}}
+		</div>
+		<div>
+			{{ character.background }}
+		</div>
+		<div>
+			{{ character.alignment}}
+		</div>
 	</div>
 
-	<div id="str">
-		Strength<br />
-		{{ character.strength}}<br />
-	</div>
-		<br />
-		Dexterity<br />
-		{{ character.dexterity}}<br />
-		<br />
-		Constitution<br />
-		{{ character.constitution}}<br />
-		<br />
-		Intelligence<br />
-		{{ character.intelligence}}<br />
-		<br />
-		Wisdom<br />
-		{{ character.wisdom}}<br />
-		<br />
-		Charisma<br />
-		{{ character.charisma}}<br />
-		<br />
-	</div>
-	<div>
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-	</div>
-	<div>
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-	</div>
-	<div>
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
-		{{ character.}}
+
+	<!-- Stat container with modifiers -->
+	<div class="stat_bar">
+		<div class="stat_text">
+			Strength
+		</div>
+		<div>
+			{{ character.strength}}<br />
+		</div>
+			<br />
+			Dexterity<br />
+			{{ character.dexterity}}<br />
+			<br />
+			Constitution<br />
+			{{ character.constitution}}<br />
+			<br />
+			Intelligence<br />
+			{{ character.intelligence}}<br />
+			<br />
+			Wisdom<br />
+			{{ character.wisdom}}<br />
+			<br />
+			Charisma<br />
+			{{ character.charisma}}<br />
+			<br />
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
+		<div>
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+			{{ character.}}
+		</div>
 	</div>
 {% endblock content %}

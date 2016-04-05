@@ -1,17 +1,57 @@
-p {
-	padding-top: 30px;
-	padding-left: 25px;
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-size: 30px;
-	text-align: left;
+.top_space {
+	padding-top: 85px;
 }
 
-h4 {
-	padding-left: 50px;
+.title_small {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
-	text-align: left;
+	font-style: italic;
+	text-align: center;
+	font-size: 15px;
+	width: 15%;
+}
+
+.title_medium {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 25px;
+	width: 15%;
+}
+
+.title_large {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 35px;
+	width: 15%;
+}
+
+.stat_bar {
+	text-align: center;
+	position: relative;
+	font-family: 'Muli', sans-serif;
+	width: 10%;
+	font-weight: bold, italic;
+}
+
+.stat_text {
+
+}
+
+.stat_value {
+
+}
+
+.char_name { 
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 23px;
+	width: 15%;
 }
 
 .footer {
@@ -21,4 +61,11 @@ h4 {
 	width:100%;
 	padding-bottom: 25px;
 	padding-right: 45px;
-	}
+}
+
+.content_border {
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 2px;
+	bottom: 0;
+}
