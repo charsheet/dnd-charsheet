@@ -101,8 +101,9 @@
 }
 
 .accordion-toggle:after {
-    content: "\f078";    
+    font-family: 'FontAwesome';
+    content: "\f078";
 }
-.accordion-opened .accordion-toggle:after {    
-    content: "\f054";    
+.accordion-opened .accordion-toggle:after {
+    content: "\f054";
 }
