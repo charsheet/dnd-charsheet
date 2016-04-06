@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
   {% block scripts %}
@@ -32,6 +33,11 @@
 
           <div id="collapseOne" class="accordion-body collapse in">
             <div class="accordion-inner">
+
+              {{ form.character_name.errors }}
+              <label for="{{ form.character_name.id_for_label }}">Character Name: </label>
+              {{ form.character_name }}
+
 
               <label for="{{ form.race.id_for_label }}">
                 Race:
@@ -197,3 +203,4 @@
     </form>
   </div>
 {% endblock content %}
+{% block footer %}{% endblock %}
