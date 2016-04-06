@@ -6,27 +6,30 @@
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: center;
+	text-align: left;
+	padding-left: 25px;
 	font-size: 15px;
-	width: 15%;
+	width: 25%;
 }
 
 .title_medium {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: center;
+	text-align: left;
+	padding-left: 25px;
 	font-size: 25px;
-	width: 15%;
+	width: 25%;
 }
 
 .title_large {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: center;
+	text-align: left;
+	padding-left: 25px;
 	font-size: 35px;
-	width: 15%;
+	width: 25%;
 }
 
 .stat_bar {
@@ -45,6 +48,12 @@
 
 }
 
+.skill_bar {
+	align-content: left;
+	position: relative;
+	text-align: left;
+}
+
 .char_name {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
@@ -52,6 +61,27 @@
 	text-align: center;
 	font-size: 23px;
 	width: 15%;
+}
+
+.char_bar {
+	text-align: left;
+	position: relative;
+	font-family: 'Muli', sans-serif;
+	font-size: 15px;
+	font-weight: bold, italic;
+	width: 50%;
+}
+
+.char_text {
+	text-align: center;
+	position: relative;
+	font-family: 'Muli', sans-serif;
+	font-size: 15px;
+	font-weight: bold, italic;
+}
+
+.char_value {
+
 }
 
 .footer {
@@ -68,4 +98,11 @@
 	border-radius: 5px;
 	border-width: 2px;
 	bottom: 0;
+}
+
+.accordion-toggle:after {
+    content: "\f078";    
+}
+.accordion-opened .accordion-toggle:after {    
+    content: "\f054";    
 }
