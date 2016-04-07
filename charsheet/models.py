@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from djangae.contrib.gauth.datastore.models import GaeDatastoreUser
 
 # Create your models here.
 
@@ -13,8 +14,7 @@ class Character(models.Model):
     This is the main model for character sheets
     """
 
-    #user = models.ForeignKey(User)
-    # not working - with dev at least
+    user = models.ForeignKey(GaeDatastoreUser)
 
     # Char Details
     player_name = models.CharField(max_length=100, blank=True)

@@ -123,4 +123,5 @@ CSP_IMG_SRC = ("'self'", "data:", "s.ytimg.com", "*.googleusercontent.com", "*.g
 CSP_CONNECT_SRC = ("'self'", "plus.google.com", "www.google-analytics.com")
 
 
+AUTH_USER_MODEL = 'djangae.GaeUser'
 from djangae.contrib.gauth.settings import *

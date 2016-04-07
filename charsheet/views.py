@@ -12,7 +12,10 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """ Return the users Character List """
-        return Character.objects.order_by('-id')
+        if self.request.user.is_authenticated():
+            return Character.objects.filter(user=self.request.user)
+        else:
+            return
 
 class CharacterDetailView(generic.DetailView):
     model = Character
