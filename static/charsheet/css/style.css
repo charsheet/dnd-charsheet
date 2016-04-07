@@ -7,9 +7,9 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	padding-left: 25px;
+	padding-top: 25px;
+	padding-left: 55px;
 	font-size: 15px;
-	width: 25%;
 }
 
 .title_medium {
@@ -17,9 +17,9 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	padding-left: 25px;
-	font-size: 25px;
-	width: 25%;
+	padding-top: 25px;
+	padding-left: 55px;
+	font-size: 20px;
 }
 
 .title_large {
@@ -29,14 +29,14 @@
 	text-align: left;
 	padding-left: 25px;
 	font-size: 35px;
-	width: 25%;
 }
 
 .stat_bar {
 	text-align: center;
 	position: relative;
 	font-family: 'Muli', sans-serif;
-	width: 10%;
+	padding-top: 25px;
+	padding-left: 55px;
 	font-weight: bold, italic;
 }
 
@@ -101,9 +101,14 @@
 }
 
 .accordion-toggle:after {
-    font-family: 'FontAwesome';
-    content: "\f078";
+  font-family: 'FontAwesome';
+  content: "\f078";
 }
 .accordion-opened .accordion-toggle:after {
-    content: "\f054";
+  content: "\f054";
+}
+
+.left_pad {
+	padding-top: 25px;
+	padding-left: 55px;
 }
