@@ -25,7 +25,7 @@
         <div class="accordion-group">
           <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-              <div class="title_medium">
+              <div class="title_medium" style="font-size:20px;">
                 Character Info:
               </div>
             </a>
@@ -34,21 +34,25 @@
           <div id="collapseOne" class="accordion-body collapse in">
             <div class="accordion-inner">
 
+              {{ form.user.as_hidden }}
+
               {{ form.character_name.errors }}
               <label for="{{ form.character_name.id_for_label }}">Character Name: </label>
               {{ form.character_name }}
 
-
+              {{ form.race.errors }}
               <label for="{{ form.race.id_for_label }}">
                 Race:
               </label>
               {{ form.race }}
 
+              {{ form.background.errors }}
               <label for="{{ form.background.id_for_label }}">
                 Background:
               </label>
               {{ form.background }}
 
+              {{ form.alignment.errors }}
               <label for="{{ form.alignment.id_for_label }}">
                 Alignment:
               </label>
@@ -73,74 +77,94 @@
           <div id="collapseTwo" class="accordion-body collapse in">
             <div class="accordion-inner">
               <div class="skill_bar">
+
+                {{ form.acrobatics.errors }}
                 <div for="{{ form.acrobatics.id_for_label }}">
                   {{ form.acrobatics }} Acrobatics
                 </div>
 
+                {{ form.animal_handling.errors }}
                 <div for="{{ form.animal_handling.id_for_label }}">
                   {{ form.animal_handling }} Animal Handling
                 </div>
 
+
+                {{ form.arcana.errors }}
                 <div for="{{ form.arcana.id_for_label }}">
                   {{ form.arcana }} Arcana
                 </div>
 
+                {{ form.athletics.errors }}
                 <div for="{{ form.athletics.id_for_label }}">
                   {{ form.athletics }} Athletics
                 </div>
 
+                {{ form.deception.errors }}
                 <div for="{{ form.deception.id_for_label }}">
                   {{ form.deception }} Deception
                 </div>
 
+                {{ form.history.errors }}
                 <div for="{{ form.history.id_for_label }}">
                   {{ form.history }} History
                 </div>
 
+                {{ form.insight.errors }}
                 <div for="{{ form.insight.id_for_label }}">
                   {{ form.insight }} Insight
                 </div>
 
+                {{ form.intimidation.errors }}
                 <div for="{{ form.intimidation.id_for_label }}">
                   {{ form.intimidation }} Intimidation
                 </div>
 
+                {{ form.investigation.errors }}
                 <div for="{{ form.investigation.id_for_label }}">
                   {{ form.investigation }} Investigation
                 </div>
 
+                {{ form.medicine.errors }}
                 <div for="{{ form.medicine.id_for_label }}">
                   {{ form.medicine }} Medicine
                 </div>
 
+                {{ form.nature.errors }}
                 <div for="{{ form.nature.id_for_label }}">
                   {{ form.nature }} Nature
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.perception.id_for_label }}">
                   {{ form.perception }} Perception
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.performance.id_for_label }}">
                   {{ form.performance }} Performance
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.persuasion.id_for_label }}">
                   {{ form.persuasion }} Persuasion
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.religion.id_for_label }}">
                   {{ form.religion }} Religion
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.sleight_of_hand.id_for_label }}">
                   {{ form.sleight_of_hand }} Sleight of Hand
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.stealth.id_for_label }}">
                   {{ form.stealth }} Stealth
                 </div>
 
+                {{ form.alignment.errors }}
                 <div for="{{ form.survival.id_for_label }}">
                   {{ form.survival }} Survival
                 </div>
