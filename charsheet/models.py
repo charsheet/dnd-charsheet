@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
+from django.core.urlresolvers import reverse
+
 #from django.contrib.auth.models import User
 from djangae.contrib.gauth.datastore.models import GaeDatastoreUser
 
@@ -38,12 +40,12 @@ class Character(models.Model):
 
     # Death Saves - I may switch this to a many to many field, but for now
     # I don't think it's worth it.
-    death_save_success_1 = models.BooleanField()
-    death_save_success_2 = models.BooleanField()
-    death_save_success_3 = models.BooleanField()
-    death_save_failure_1 = models.BooleanField()
-    death_save_failure_2 = models.BooleanField()
-    death_save_failure_3 = models.BooleanField()
+    death_save_success_1 = models.BooleanField(default=0)
+    death_save_success_2 = models.BooleanField(default=0)
+    death_save_success_3 = models.BooleanField(default=0)
+    death_save_failure_1 = models.BooleanField(default=0)
+    death_save_failure_2 = models.BooleanField(default=0)
+    death_save_failure_3 = models.BooleanField(default=0)
 
     # Char Description
     age = models.IntegerField(null=True, blank=True)
@@ -68,24 +70,24 @@ class Character(models.Model):
     charisma = models.IntegerField(null=True, blank=True)
 
     # Skills
-    acrobatics = models.BooleanField()
-    animal_handling = models.BooleanField()
-    arcana = models.BooleanField()
-    athletics = models.BooleanField()
-    deception = models.BooleanField()
-    history = models.BooleanField()
-    insight = models.BooleanField()
-    intimidation = models.BooleanField()
-    investigation = models.BooleanField()
-    medicine = models.BooleanField()
-    nature = models.BooleanField()
-    perception = models.BooleanField()
-    performance = models.BooleanField()
-    persuasion = models.BooleanField()
-    religion = models.BooleanField()
-    sleight_of_hand = models.BooleanField()
-    stealth = models.BooleanField()
-    survival = models.BooleanField()
+    acrobatics = models.BooleanField(default=0)
+    animal_handling = models.BooleanField(default=0)
+    arcana = models.BooleanField(default=0)
+    athletics = models.BooleanField(default=0)
+    deception = models.BooleanField(default=0)
+    history = models.BooleanField(default=0)
+    insight = models.BooleanField(default=0)
+    intimidation = models.BooleanField(default=0)
+    investigation = models.BooleanField(default=0)
+    medicine = models.BooleanField(default=0)
+    nature = models.BooleanField(default=0)
+    perception = models.BooleanField(default=0)
+    performance = models.BooleanField(default=0)
+    persuasion = models.BooleanField(default=0)
+    religion = models.BooleanField(default=0)
+    sleight_of_hand = models.BooleanField(default=0)
+    stealth = models.BooleanField(default=0)
+    survival = models.BooleanField(default=0)
 
     personality_traits = models.TextField(blank=True)
     ideals = models.TextField(blank=True)
@@ -103,6 +105,9 @@ class Character(models.Model):
 
     def __str__(self):
         return self.character_name
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk': self.pk})
 
 
 class CharacterClass(models.Model):

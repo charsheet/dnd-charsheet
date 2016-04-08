@@ -18,6 +18,16 @@ class IndexView(generic.ListView):
         else:
             return
 
+class CharacterCreateView(generic.CreateView):
+    model = Character
+    template_name = 'create.html'
+    fields = ['character_name']
+
+    def form_valid(self, form):
+         user = self.request.user
+         form.instance.user = user
+         return super(CharacterCreateView, self).form_valid(form)
+
 class CharacterDetailView(generic.DetailView):
     model = Character
     template_name = 'detail.html'
