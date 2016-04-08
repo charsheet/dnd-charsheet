@@ -1,3 +1,40 @@
-<form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Create" />
+{% extends "base.html" %}
+  {% block scripts %}
+    {% load staticfiles %}
+    <!-- Import JQuery style.js) -->
+    <script src="{% static 'charsheet/js/jquery.formset.js' %}"></script>
+    <script src="{% static 'charsheet/js/django.inline.js' %}"></script>
+  {% endblock scripts %}
+  {% block header %}{% endblock header %}
+  {% block content %}
+    <div>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div>
+                {{ form.as_p }}
+            </div>
+            <fieldset>
+                <legend>Character Class</legend>
+                {{ characterclass_form.management_form }}
+                {{ characterclass_form.non_form_errors }}
+                {% for form in characterclass_form %}
+                    {{ form.id }}
+                    <div class="inline {{ characterclass_form.prefix }}">
+                        {{ form.char_class.errors }}
+                        {{ form.char_class.label_tag }}
+                        {{ form.char_class }}
+
+                        {{ form.level.errors }}
+                        {{ form.level.label_tag }}
+                        {{ form.level }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <input type="submit" value="Add recipe" class="submit" />
+        </form>
+    </div>
+<br>
+<br>
+<br><br><br><br><br><br>
+{% endblock content %}
+{% block footer %}{% endblock footer %}
