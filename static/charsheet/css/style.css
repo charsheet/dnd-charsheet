@@ -1,59 +1,3 @@
-.top_space {
-	padding-top: 85px;
-}
-
-.title_small {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-align: left;
-	padding-top: 25px;
-	padding-left: 55px;
-	font-size: 15px;
-}
-
-.title_medium {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-align: left;
-	padding-top: 25px;
-	padding-left: 55px;
-	font-size: 20px;
-}
-
-.title_large {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-align: left;
-	padding-left: 25px;
-	font-size: 35px;
-}
-
-.stat_bar {
-	text-align: center;
-	position: relative;
-	font-family: 'Muli', sans-serif;
-	padding-top: 25px;
-	padding-left: 55px;
-	font-weight: bold, italic;
-}
-
-.stat_text {
-
-}
-
-.stat_value {
-
-}
-
-.skill_bar {
-	align-content: left;
-	position: relative;
-	text-align: left;
-}
-
 .char_name {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
@@ -69,19 +13,113 @@
 	font-family: 'Muli', sans-serif;
 	font-size: 15px;
 	font-weight: bold, italic;
-	width: 50%;
+	padding-top: 25px;
+	padding-left: 55px;
+	margin-bottom: 25px;
+	width: 700px;
+	Height: 150px;
 }
 
 .char_text {
-	text-align: center;
-	position: relative;
 	font-family: 'Muli', sans-serif;
-	font-size: 15px;
-	font-weight: bold, italic;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 10px;
 }
 
 .char_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 15px;
+	display: block;
+	width: 176px;
+	float: left;
+	margin-right: 15px;
+	margin-top: 10px;
+}
 
+.stat_bar {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold, italic;
+	padding-left: 55px;
+	margin-left: 10px;
+	margin-bottom: 25px;
+	width: 20%;
+	float: left;
+}
+
+.stat_text {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 15px;
+	display: block;
+}
+
+.stat_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 18px;
+	display: block;
+	margin-top: 15px;
+}
+
+.skill_bar {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold, italic;
+	width: 25%;
+	float: left;
+}
+
+.top_space {
+	padding-top: 85px;
+}
+
+.text_small {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic, underline;
+	text-align: left;
+	font-size: 10px;
+	display: block;
+	width: 176px;
+}
+
+.title_small {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	padding-top: 15px;
+	padding-left: 55px;
+	font-size: 15px;
+}
+
+.title_medium {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	margin-left: -10px;
+	margin-bottom: 5px;
+	font-size: 20px;
+	width: 500px;
+}
+
+.title_large {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	padding-left: 15px;
+	font-size: 35px;
+	width: 500px;
 }
 
 .footer {
@@ -111,4 +149,9 @@
 .left_pad {
 	padding-top: 25px;
 	padding-left: 55px;
+	width: 100%;
+}
+
+.update_btn {
+	
 }

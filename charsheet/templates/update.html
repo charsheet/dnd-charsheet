@@ -17,214 +17,222 @@
   <div class="title_large">
     {{ character.character_name}}
   </div>
-  <div class="char_bar">
+  <div>
     <form action="" method="post">{% csrf_token %}
+
       {{ form.non_field_errors }}
 
-      <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-          <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-              <div class="title_medium" style="font-size:20px;">
-                Character Info:
-              </div>
-            </a>
-          </div>
+      <div class="char_bar">
+        {{ form.user.as_hidden }}
 
-          <div id="collapseOne" class="accordion-body collapse in">
-            <div class="accordion-inner">
+        <div class="char_value">
+          {{ form.character_name.errors }}
+          {{ form.character_name }}
+          <label class="char_text" for="{{ form.character_name.id_for_label }}">
+            Character Name:
+          </label>
+        </div>
 
-              {{ form.user.as_hidden }}
+        <div class="char_value">
+          {{ form.race.errors }}
+          {{ form.race }}
+          <label class="char_text" for="{{ form.race.id_for_label }}">
+            Race:
+          </label>
+        </div>
 
-              {{ form.character_name.errors }}
-              <label for="{{ form.character_name.id_for_label }}">Character Name: </label>
-              {{ form.character_name }}
+        <div class="char_value">
+          {{ form.char_class.errors }}
+          {{ form.race }}
+          <label class="char_text" for="{{ form.char_class.id_for_label }}">
+            Class:
+          </label>
+        </div>
 
-              {{ form.race.errors }}
-              <label for="{{ form.race.id_for_label }}">
-                Race:
-              </label>
-              {{ form.race }}
+        <div class="char_value">
+          {{ form.background.errors }}
+          {{ form.background }}
+          <label class="char_text" for="{{ form.background.id_for_label }}">
+            Background:
+          </label>
+        </div>
 
-              {{ form.background.errors }}
-              <label for="{{ form.background.id_for_label }}">
-                Background:
-              </label>
-              {{ form.background }}
-
-              {{ form.alignment.errors }}
-              <label for="{{ form.alignment.id_for_label }}">
-                Alignment:
-              </label>
-              {{ form.alignment }}
-
-            </div>
-          </div>
+        <div class="char_value">
+          {{ form.alignment.errors }}
+          {{ form.alignment }}
+          <label class="char_text" for="{{ form.alignment.id_for_label }}">
+            Alignment:
+          </label>
         </div>
       </div>
 
 
-      <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-          <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-              <div class="title_medium">
-                Skills:
-              </div>
-            </a>
-          </div>
-
-          <div id="collapseTwo" class="accordion-body collapse in">
-            <div class="accordion-inner">
-              <div class="skill_bar">
-
-                {{ form.acrobatics.errors }}
-                <div for="{{ form.acrobatics.id_for_label }}">
-                  {{ form.acrobatics }} Acrobatics
-                </div>
-
-                {{ form.animal_handling.errors }}
-                <div for="{{ form.animal_handling.id_for_label }}">
-                  {{ form.animal_handling }} Animal Handling
-                </div>
 
 
-                {{ form.arcana.errors }}
-                <div for="{{ form.arcana.id_for_label }}">
-                  {{ form.arcana }} Arcana
-                </div>
 
-                {{ form.athletics.errors }}
-                <div for="{{ form.athletics.id_for_label }}">
-                  {{ form.athletics }} Athletics
-                </div>
+      <div class="stat_bar">
 
-                {{ form.deception.errors }}
-                <div for="{{ form.deception.id_for_label }}">
-                  {{ form.deception }} Deception
-                </div>
+        <div class="title_medium">
+          Stats:
+        </div>
 
-                {{ form.history.errors }}
-                <div for="{{ form.history.id_for_label }}">
-                  {{ form.history }} History
-                </div>
 
-                {{ form.insight.errors }}
-                <div for="{{ form.insight.id_for_label }}">
-                  {{ form.insight }} Insight
-                </div>
+        <div class="stat_value">
+          {{ form.strength.errors }}
+          {{ form.strength }}
+          <label class="stat_text" for="{{ form.strength.id_for_label }}">
+            Strength
+          </label>
+        </div>
 
-                {{ form.intimidation.errors }}
-                <div for="{{ form.intimidation.id_for_label }}">
-                  {{ form.intimidation }} Intimidation
-                </div>
+        <div class="stat_value">
+          {{ form.dexterity.errors }}
+          {{ form.dexterity }}
+          <label class="stat_text" for="{{ form.dexterity.id_for_label }}">
+            Dexterity
+          </label>
+        </div>
 
-                {{ form.investigation.errors }}
-                <div for="{{ form.investigation.id_for_label }}">
-                  {{ form.investigation }} Investigation
-                </div>
+        <div class="stat_value">
+          {{ form.constitution.errors }}
+          {{ form.constitution }}
+          <label class="stat_text" for="{{ form.constitution.id_for_label }}">
+            Constitution
+          </label>
+        </div>
 
-                {{ form.medicine.errors }}
-                <div for="{{ form.medicine.id_for_label }}">
-                  {{ form.medicine }} Medicine
-                </div>
+        <div class="stat_value">
+          {{ form.intelligence.errors }}
+          {{ form.intelligence }}
+          <label class="stat_text" for="{{ form.intelligence.id_for_label }}">
+            Intelligence
+          </label>
+        </div>
 
-                {{ form.nature.errors }}
-                <div for="{{ form.nature.id_for_label }}">
-                  {{ form.nature }} Nature
-                </div>
+        <div class="stat_value">
+          {{ form.wisdom.errors }}
+          {{ form.wisdom }}
+          <label class="stat_text" for="{{ form.wisdom.id_for_label }}">
+            Wisdom
+          </label>
+        </div>
 
-                {{ form.alignment.errors }}
-                <div for="{{ form.perception.id_for_label }}">
-                  {{ form.perception }} Perception
-                </div>
+        <div class="stat_value">
+          {{ form.charisma.errors }}
+          {{ form.charisma }}
+          <label class="stat_text" for="{{ form.charisma.id_for_label }}">
+            Charisma
+          </label>
+        </div>
 
-                {{ form.alignment.errors }}
-                <div for="{{ form.performance.id_for_label }}">
-                  {{ form.performance }} Performance
-                </div>
-
-                {{ form.alignment.errors }}
-                <div for="{{ form.persuasion.id_for_label }}">
-                  {{ form.persuasion }} Persuasion
-                </div>
-
-                {{ form.alignment.errors }}
-                <div for="{{ form.religion.id_for_label }}">
-                  {{ form.religion }} Religion
-                </div>
-
-                {{ form.alignment.errors }}
-                <div for="{{ form.sleight_of_hand.id_for_label }}">
-                  {{ form.sleight_of_hand }} Sleight of Hand
-                </div>
-
-                {{ form.alignment.errors }}
-                <div for="{{ form.stealth.id_for_label }}">
-                  {{ form.stealth }} Stealth
-                </div>
-
-                {{ form.alignment.errors }}
-                <div for="{{ form.survival.id_for_label }}">
-                  {{ form.survival }} Survival
-                </div>
-
-              </div>
-            </div>
-          </div>
+        <div class="stat_value">
+          {{ form.strength.errors }}
+          {{ form.strength }}
+          <label class="stat_text" for="{{ form.strength.id_for_label }}">
+            Strength
+          </label>
         </div>
       </div>
 
-      <div class="field_wrapper">
-        <label for="{{ form.strength.id_for_label }}">
-          Strength:
-        </label>
-        {{ form.strength }}
+      <div class="skill_bar">
+        <div class="title_medium">
+          Skills:
+        </div>
+        {{ form.acrobatics.errors }}
+        <div for="{{ form.acrobatics.id_for_label }}">
+          {{ form.acrobatics }} Acrobatics
+        </div>
+
+        {{ form.animal_handling.errors }}
+        <div for="{{ form.animal_handling.id_for_label }}">
+          {{ form.animal_handling }} Animal Handling
+        </div>
+
+
+        {{ form.arcana.errors }}
+        <div for="{{ form.arcana.id_for_label }}">
+          {{ form.arcana }} Arcana
+        </div>
+
+        {{ form.athletics.errors }}
+        <div for="{{ form.athletics.id_for_label }}">
+          {{ form.athletics }} Athletics
+        </div>
+
+        {{ form.deception.errors }}
+        <div for="{{ form.deception.id_for_label }}">
+          {{ form.deception }} Deception
+        </div>
+
+        {{ form.history.errors }}
+        <div for="{{ form.history.id_for_label }}">
+          {{ form.history }} History
+        </div>
+
+        {{ form.insight.errors }}
+        <div for="{{ form.insight.id_for_label }}">
+          {{ form.insight }} Insight
+        </div>
+
+        {{ form.intimidation.errors }}
+        <div for="{{ form.intimidation.id_for_label }}">
+          {{ form.intimidation }} Intimidation
+        </div>
+
+        {{ form.investigation.errors }}
+        <div for="{{ form.investigation.id_for_label }}">
+          {{ form.investigation }} Investigation
+        </div>
+
+        {{ form.medicine.errors }}
+        <div for="{{ form.medicine.id_for_label }}">
+          {{ form.medicine }} Medicine
+        </div>
+
+        {{ form.nature.errors }}
+        <div for="{{ form.nature.id_for_label }}">
+          {{ form.nature }} Nature
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.perception.id_for_label }}">
+          {{ form.perception }} Perception
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.performance.id_for_label }}">
+          {{ form.performance }} Performance
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.persuasion.id_for_label }}">
+          {{ form.persuasion }} Persuasion
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.religion.id_for_label }}">
+          {{ form.religion }} Religion
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.sleight_of_hand.id_for_label }}">
+          {{ form.sleight_of_hand }} Sleight of Hand
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.stealth.id_for_label }}">
+          {{ form.stealth }} Stealth
+        </div>
+
+        {{ form.alignment.errors }}
+        <div for="{{ form.survival.id_for_label }}">
+          {{ form.survival }} Survival
+        </div>
       </div>
 
-      <div class="field_wrapper">
-        <label for="{{ form.dexterity.id_for_label }}">
-          Dexterity:
-        </label>
-        {{ form.dexterity }}
-      </div>
-
-      <div class="field_wrapper">
-        <label for="{{ form.constitution.id_for_label }}">
-          Constitution:
-        </label>
-        {{ form.constitution }}
-      </div>
-
-      <div class="field_wrapper">
-        <label for="{{ form.intelligence.id_for_label }}">
-          Intelligence:
-        </label>
-        {{ form.intelligence }}
-      </div>
-
-      <div class="field_wrapper">
-        <label for="{{ form.wisdom.id_for_label }}">
-          Wisdom:
-        </label>
-        {{ form.wisdom }}
-      </div>
-
-      <div class="field_wrapper">
-        <label for="{{ form.charisma.id_for_label }}">
-          Charisma:
-        </label>
-        {{ form.charisma }}
-      </div>
-
-      <div class="field_wrapper">
-        <label for="{{ form.constitution.id_for_label }}">
-          Constitution:
-        </label>
-        {{ form.constitution }}
-      </div>
-      <input type="submit" value="Update" />
+      <div>
+        <input type="submit" value="Update" />
+      <div>
     </form>
   </div>
 {% endblock content %}
-{% block footer %}{% endblock %}
