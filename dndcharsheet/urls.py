@@ -11,6 +11,7 @@ from charsheet import views
 urlpatterns = patterns('',
     # Examples:
      url(r'^$', views.IndexView.as_view(), name='index'),
+     url(r'^create/', views.CharacterCreateView.as_view(), name='create'),
      url(r'^(?P<pk>[0-9]+)/$', views.CharacterDetailView.as_view(), name='detail'),
      url(r'^(?P<pk>[0-9]+)/update$', views.CharacterUpdateView.as_view(), name='update'),
 
