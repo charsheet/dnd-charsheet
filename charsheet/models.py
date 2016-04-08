@@ -16,6 +16,27 @@ class Character(models.Model):
     This is the main model for character sheets
     """
 
+    LAWFUL_GOOD = 'LG'
+    NEUTRAL_GOOD = 'NG'
+    CHAOTIC_GOOD = 'CG'
+    LAWFUL_NEUTRAL = 'LN'
+    TRUE_NEUTRAL = 'TN'
+    CHAOTIC_NEUTRAL = 'CN'
+    LAWFUL_EVIL = 'LE'
+    NEUTRAL_EVIL = 'NE'
+    CHAOTIC_EVIL = 'CE'
+    ALIGNMENT_CHOICES = (
+        (LAWFUL_GOOD, 'Lawful Good'),
+        (NEUTRAL_GOOD, 'Nuetral Good'),
+        (CHAOTIC_GOOD, 'Chaotic Good'),
+        (LAWFUL_NEUTRAL, 'Lawful Neutral'),
+        (TRUE_NEUTRAL, 'True Neutral'),
+        (CHAOTIC_NEUTRAL, 'Chaotic Neutral'),
+        (LAWFUL_EVIL, 'Lawful Evil'),
+        (NEUTRAL_EVIL, 'Neutral Evil'),
+        (CHAOTIC_EVIL, 'Chaotic Evil'),
+    )
+
     user = models.ForeignKey(GaeDatastoreUser)
 
     # Char Details
@@ -23,14 +44,14 @@ class Character(models.Model):
     character_name = models.CharField(max_length=100)
     background = models.CharField(max_length=200, blank=True)
     race = models.CharField(max_length=200, blank=True)
-    alignment = models.CharField(max_length=200, blank=True)
+    alignment = models.CharField(max_length=2, choices=ALIGNMENT_CHOICES, default=TRUE_NEUTRAL)
     experience_points = models.IntegerField(null=True, blank=True)
     max_hit_points = models.IntegerField(null=True, blank=True)
     current_hit_points = models.IntegerField(null=True, blank=True)
     temporary_hit_points = models.IntegerField(null=True, blank=True)
     armor_class = models.IntegerField(null=True, blank=True)
     initiative = models.IntegerField(null=True, blank=True)
-    speed = models.IntegerField(null=True, blank=True)
+    speed = models.IntegerField(null=True, blank=True, default=25)
     inspiration = models.IntegerField(null=True, blank=True)
     proficiency_bonus = models.IntegerField(null=True, blank=True)
 
