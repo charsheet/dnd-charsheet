@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 
-  {% block scripts %}
-    {% load staticfiles %}
-    <!-- Import JQuery style.js) -->
-    <script src="{% static 'charsheet/js/style.js' %}"></script>
-  {% endblock scripts %}
+{% block scripts %}
+  {% load staticfiles %}
+  <!-- Import JQuery style.js) -->
+  <script src="{% static 'charsheet/js/style.js' %}"></script>
+{% endblock scripts %}
 
 {% block charname %}
   {{ character.character_name }}
 {% endblock charname %}
-
 
 {% block content %}
   <div class="top_space"></div>
   <div class="title_large">
     {{ character.character_name}}
   </div>
+
   <div>
     <form action="" method="post">{% csrf_token %}
-
       {{ form.non_field_errors }}
 
       <div class="char_bar">
@@ -65,17 +64,10 @@
         </div>
       </div>
 
-
-
-
-
       <div class="stat_bar">
-
         <div class="title_medium">
           Stats:
         </div>
-
-
         <div class="stat_value">
           {{ form.strength.errors }}
           {{ form.strength }}
@@ -121,14 +113,6 @@
           {{ form.charisma }}
           <label class="stat_text" for="{{ form.charisma.id_for_label }}">
             Charisma
-          </label>
-        </div>
-
-        <div class="stat_value">
-          {{ form.strength.errors }}
-          {{ form.strength }}
-          <label class="stat_text" for="{{ form.strength.id_for_label }}">
-            Strength
           </label>
         </div>
       </div>
@@ -228,6 +212,8 @@
           {{ form.survival }} Survival
         </div>
       </div>
+
+
 
       <div class="update_btn">
         <input type="submit" value="Update" />
