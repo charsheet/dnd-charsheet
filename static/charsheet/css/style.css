@@ -2,22 +2,18 @@
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: center;
+	text-align: left;
 	font-size: 23px;
-	width: 15%;
+	margin-left: 35px;
 }
 
 .char_bar {
 	text-align: left;
-	position: relative;
 	font-family: 'Muli', sans-serif;
 	font-size: 15px;
 	font-weight: bold, italic;
-	padding-top: 25px;
-	padding-left: 55px;
-	margin-bottom: 25px;
-	width: 700px;
-	Height: 150px;
+	margin-left: 35px;
+	margin-bottom: 15px;
 }
 
 .char_text {
@@ -26,6 +22,7 @@
 	font-style: italic;
 	text-align: left;
 	font-size: 10px;
+	display: block;
 }
 
 .char_value {
@@ -35,8 +32,6 @@
 	text-align: left;
 	font-size: 15px;
 	display: block;
-	width: 176px;
-	float: left;
 	margin-right: 15px;
 	margin-top: 10px;
 }
@@ -44,18 +39,14 @@
 .stat_bar {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold, italic;
-	padding-left: 55px;
-	margin-left: 10px;
-	margin-bottom: 25px;
-	width: 20%;
-	float: left;
+	margin-left: 35px;
+	margin-bottom: 15px;
 }
 
 .stat_text {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
 	font-size: 15px;
 	display: block;
 }
@@ -65,16 +56,16 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	font-size: 18px;
+	font-size: 15px;
 	display: block;
-	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .skill_bar {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold, italic;
-	width: 25%;
-	float: left;
+	margin-left: 35px;
+	margin-bottom: 15px;
 }
 
 .top_space {
@@ -88,7 +79,6 @@
 	text-align: left;
 	font-size: 10px;
 	display: block;
-	width: 176px;
 }
 
 .title_small {
@@ -96,8 +86,6 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	padding-top: 15px;
-	padding-left: 55px;
 	font-size: 15px;
 }
 
@@ -106,10 +94,8 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	margin-left: -10px;
-	margin-bottom: 5px;
 	font-size: 20px;
-	width: 500px;
+	margin-bottom: 15px;
 }
 
 .title_large {
@@ -117,9 +103,9 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	padding-left: 15px;
 	font-size: 35px;
-	width: 500px;
+	margin-left: 15px;
+	margin-bottom: 5px;
 }
 
 .footer {
@@ -127,8 +113,9 @@
 	position: fixed;
 	bottom: 0;
 	width:100%;
+	padding-top: 25px;
 	padding-bottom: 25px;
-	padding-right: 45px;
+	padding-right: 55px;
 }
 
 .content_border {
@@ -152,6 +139,12 @@
 	width: 100%;
 }
 
-.update_btn {
-
+.btn_nav {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 23px;
+	margin-left: 55px;
+	margin-bottom: 10px;
 }
