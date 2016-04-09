@@ -4,7 +4,7 @@ from django.views import generic
 from django.http import Http404
 
 from .models import Character, CharacterClass
-from .forms import CharacterForm, CharacterClassFormset
+from .forms import CharacterForm, CharacterClassFormset, EquipmentFormset, AttacksAndSpellcastingFormset, SpellsFormset
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -17,6 +17,7 @@ class IndexView(generic.ListView):
             return Character.objects.filter(user=self.request.user)
         else:
             return
+            
 
 class CharacterCreateView(generic.CreateView):
     model = Character
@@ -34,8 +35,15 @@ class CharacterCreateView(generic.CreateView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         characterclass_form = CharacterClassFormset()
+        equipment_form = EquipmentFormset()
+        attacksandspellcasting_form = AttacksAndSpellcastingFormset()
+        spells_form = SpellsFormset()
+
         return self.render_to_response(self.get_context_data(form=form,
-                                       characterclass_form=characterclass_form))
+               equipment_form = equipment_form,
+               attacksandspellcasting_form = attacksandspellcasting_form,
+               spells_form = spells_form,
+               characterclass_form=characterclass_form))
 
     def post(self, request, *args, **kwargs):
         """
@@ -47,10 +55,27 @@ class CharacterCreateView(generic.CreateView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         characterclass_form = CharacterClassFormset(self.request.POST)
-        if (form.is_valid() and characterclass_form.is_valid()):
-            return self.form_valid(form, characterclass_form)
+        equipment_form = EquipmentFormset(self.request.POST)
+        attacksandspellcasting_form = AttacksAndSpellcastingFormset(self.request.POST)
+        spells_form = SpellsFormset(self.request.POST)
+
+        if (form.is_valid() and
+            characterclass_form.is_valid() and
+            equipment_form.is_valid() and
+            attacksandspellcasting_form.is_valid(),
+            spells_form.is_valid):
+
+            return self.form_valid(form,
+                characterclass_form,
+                equipment_form,
+                attacksandspellcasting_form,
+                spells_form)
         else:
-            return self.form_invalid(form, characterclass_form)
+            return self.form_invalid(form,
+                characterclass_form,
+                equipment_form,
+                attacksandspellcasting_form,
+                spells_form)
 
     def form_valid(self, form, characterclass_form):
         """
@@ -61,6 +86,15 @@ class CharacterCreateView(generic.CreateView):
         self.object = form.save()
         characterclass_form.instance = self.object
         characterclass_form.save()
+
+        equipment_form.instance = self.object
+        equipment_form.save()
+
+        attacksandspellcasting_form.instance = self.object
+        attacksandspellcasting_form.save()
+
+        spells_form.instance = self.object
+        spells_form.save()
 
         user = self.request.user
         form.instance.user = user
@@ -75,13 +109,16 @@ class CharacterCreateView(generic.CreateView):
         """
         return self.render_to_response(
             self.get_context_data(form=form,
-                                  characterclass_form=characterclass_form))
+                characterclass_form=characterclass_form,
+                equipment_form=equipment_form,
+                attacksandspellcasting_form=attacksandspellcasting_form,
+                spells_form=spells_form))
 
-    #def form_valid(self, form):
 
 class CharacterDetailView(generic.DetailView):
     model = Character
     template_name = 'detail.html'
+
 
 class CharacterUpdateView(generic.UpdateView):
     model = Character

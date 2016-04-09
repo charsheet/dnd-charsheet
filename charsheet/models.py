@@ -151,7 +151,7 @@ class AttacksAndSpellcasting(models.Model):
     character = models.ForeignKey(Character)
     attack = models.CharField(max_length=50)
     bonus = models.IntegerField(null=True, blank=True)
-    damange = models.CharField(max_length=50)
+    damage = models.CharField(max_length=50)
     damage_type = models.CharField(max_length=50)
 
 class Spells(models.Model):

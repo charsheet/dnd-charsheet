@@ -29,8 +29,72 @@
                         {{ form.level }}
                     </div>
                 {% endfor %}
+                {% for form in equipment_form %}
+                    {{ form.id }}
+                    <div class="inline {{ equipment_form.prefix }}">
+                        {{ form.quantity.errors }}
+                        {{ form.quantity.label_tag }}
+                        {{ form.quantity }}
+
+                        {{ form.name.errors }}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+
+                        {{ form.description.errors }}
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+
+                        {{ form.weight.errors }}
+                        {{ form.weight.label_tag }}
+                        {{ form.weight }}
+
+                        {{ form.value.errors }}
+                        {{ form.value.label_tag }}
+                        {{ form.value }}
+                    </div>
+                {% endfor %}
+                {% for form in attacksandspellcasting_form %}
+                    {{ form.id }}
+                    <div class="inline {{ attacksandspellcasting_form.prefix }}">
+                        {{ form.attack.errors }}
+                        {{ form.attack.label_tag }}
+                        {{ form.attack }}
+
+                        {{ form.bonus.errors }}
+                        {{ form.bonus.label_tag }}
+                        {{ form.bonus }}
+
+                        {{ form.damage.errors }}
+                        {{ form.damage.label_tag }}
+                        {{ form.damage }}
+
+                        {{ form.damage_type.errors }}
+                        {{ form.damage_type.label_tag }}
+                        {{ form.damage_type }}
+                    </div>
+                {% endfor %}
+                {% for form in spells_form %}
+                    {{ form.id }}
+                    <div class="inline {{ spells_form.prefix }}">
+                        {{ form.level_or_cantrip.errors }}
+                        {{ form.level_or_cantrip.label_tag }}
+                        {{ form.level_or_cantrip }}
+
+                        {{ form.name.errors }}
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+
+                        {{ form.description.errors }}
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+
+                        {{ form.prepared.errors }}
+                        {{ form.prepared.label_tag }}
+                        {{ form.prepared }}
+                    </div>
+                {% endfor %}
             </fieldset>
-            <input type="submit" value="Add recipe" class="submit" />
+            <input type="submit" value="Create" class="submit" />
         </form>
     </div>
 <br>
