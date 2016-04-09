@@ -60,12 +60,17 @@
         {% endblock navbar %}
       {% endblock header %}
       {% block content %}{% endblock content %}
-      <div class="container-fluid">
-        {% block footer %}
-          <div class="footer">
-            Copyright © 2016
+      {% block footer %}
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="footer">
+                Copyright © 2016
+              </div>
+            </div>
           </div>
-        {% endblock footer %}
+        </div>
+      {% endblock footer %}
     </div>
   </body>
 </html>
