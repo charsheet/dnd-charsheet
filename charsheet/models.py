@@ -61,12 +61,12 @@ class Character(models.Model):
 
     # Death Saves - I may switch this to a many to many field, but for now
     # I don't think it's worth it.
-    death_save_success_1 = models.BooleanField(default=0)
-    death_save_success_2 = models.BooleanField(default=0)
-    death_save_success_3 = models.BooleanField(default=0)
-    death_save_failure_1 = models.BooleanField(default=0)
-    death_save_failure_2 = models.BooleanField(default=0)
-    death_save_failure_3 = models.BooleanField(default=0)
+    death_save_success_1 = models.BooleanField(default=False)
+    death_save_success_2 = models.BooleanField(default=False)
+    death_save_success_3 = models.BooleanField(default=False)
+    death_save_failure_1 = models.BooleanField(default=False)
+    death_save_failure_2 = models.BooleanField(default=False)
+    death_save_failure_3 = models.BooleanField(default=False)
 
     # Char Description
     age = models.IntegerField(null=True, blank=True)

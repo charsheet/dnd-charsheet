@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
             return Character.objects.filter(user=self.request.user)
         else:
             return
-            
+
 
 class CharacterCreateView(generic.CreateView):
     model = Character
@@ -77,7 +77,7 @@ class CharacterCreateView(generic.CreateView):
                 attacksandspellcasting_form,
                 spells_form)
 
-    def form_valid(self, form, characterclass_form):
+    def form_valid(self, form, characterclass_form, equipment_form, attacksandspellcasting_form, spells_form):
         """
         Called if all forms are valid. Creates a Recipe instance along with
         associated Ingredients and Instructions and then redirects to a

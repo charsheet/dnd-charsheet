@@ -29,6 +29,8 @@
                         {{ form.level }}
                     </div>
                 {% endfor %}
+                {{ equipment_form.management_form }}
+                {{ equipment_form.non_form_errors }}
                 {% for form in equipment_form %}
                     {{ form.id }}
                     <div class="inline {{ equipment_form.prefix }}">
@@ -53,6 +55,8 @@
                         {{ form.value }}
                     </div>
                 {% endfor %}
+                {{ attacksandspellcasting_form.management_form }}
+                {{ attacksandspellcasting_form.non_form_errors }}
                 {% for form in attacksandspellcasting_form %}
                     {{ form.id }}
                     <div class="inline {{ attacksandspellcasting_form.prefix }}">
@@ -73,6 +77,8 @@
                         {{ form.damage_type }}
                     </div>
                 {% endfor %}
+                {{ spells_form.management_form }}
+                {{ spells_form.non_form_errors }}
                 {% for form in spells_form %}
                     {{ form.id }}
                     <div class="inline {{ spells_form.prefix }}">
