@@ -9,17 +9,12 @@
     <!-- Import JQuery) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-    <!-- Import Google Fonts) -->
-    <!-- font-family: 'Marck Script', cursive; -->
-    <link href='https://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
-
-    <!-- Import FontAwesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
     <!-- font-family: 'Muli', sans-serif; -->
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300italic' rel='stylesheet' type='text/css'>
 
+    <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="{% static 'charsheet/css/style.css' %}" />
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -45,9 +40,7 @@
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="update">Edit Character</a>
-                  </li>
+                  {% block navlist %}{% endblock navlist %}
                   <li>
                     <a href="">Inventory</a>
                   </li>
@@ -67,9 +60,12 @@
         {% endblock navbar %}
       {% endblock header %}
       {% block content %}{% endblock content %}
-      <div class="footer">
-        {% block footer %}Copyright © 2016{% endblock footer %}
-      </div>
+      <div class="container-fluid">
+        {% block footer %}
+          <div class="footer">
+            Copyright © 2016
+          </div>
+        {% endblock footer %}
     </div>
   </body>
 </html>

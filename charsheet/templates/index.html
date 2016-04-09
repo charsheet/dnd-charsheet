@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
-<body>
-	{% block content %}
-    <div class="top_space">
-    	{% if charsheet_list %}
-    		<div class="title_large">
-    			Characters
-    		</div>
-        <div class="char_name">
-			    {% for charsheet in charsheet_list %}
-			    	<a href="/{{ charsheet.id }}/">{{ charsheet.character_name }}</a>
-			    {% endfor %}
-        </div>
-			{% endif %}
-    </div>
-	{% endblock content %}
-</body>
+{% block content %}
+  <div class="top_space"></div>
+	<div class="container-fluid">
+  	{% if charsheet_list %}
+  		<div class="title_large">
+  			Characters
+  		</div>
+	    {% for charsheet in charsheet_list %}
+	    	<a class="btn btn-default btn-lg btn_nav" href="/{{ charsheet.id }}/">
+						{{ charsheet.character_name }}
+				</a>
+	    {% endfor %}
+		{% endif %}
+	</div>
+{% endblock content %}
