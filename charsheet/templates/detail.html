@@ -6,14 +6,10 @@
 		<script src="{% static 'charsheet/js/style.js' %}"></script>
 	{% endblock scripts %}
 
-{% block charname %}
-	{{ character.character_name }}
-{% endblock charname %}
 {% block content %}
 	<div class="top_space"></div>
-
 	<div class="container-fluid">
-		<!-- Basic Character Information -->
+		<!-- Character Title -->
 		<div class="title_large">
 			{{ character.character_name}}
 			<a href="update">
@@ -23,176 +19,481 @@
 			</a>
 		</div>
 	</div>
+
 	<div class="container-fluid">
-		<div class="char_bar">
-			<!--
-			<div>
-				{{ character.player_name}}
-			</div>
+    <form action="" method="post">{% csrf_token %}
+    {{ character.non_field_errors }}
+    <!-- Row 1-->
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="row">
 
-			<div>
-				{{ characterclass.level}}
-			</div>
-			<div>
-				{{ characterclass.char_class}}
-			</div>
-			-->
-			<div>
-				{{ character.race}}
-			</div>
-			<div>
-				{{ character.background }}
-			</div>
-			<div>
-				{{ character.alignment}}
-			</div>
-		</div>
-	</div>
+          <!--  Character Basic Info -->
+          <div class="col-xs-3">
+            <div class="char_bar">
+              {{ character.user.as_hidden }}
+              <div class="title_medium">
+                General Info:
+              </div>
+              <div class="char_value">
+                {{ character.race }}
+                <label class="char_text" for="{{ character.race.id_for_label }}">
+                  Race:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.race }}
+                <label class="char_text" for="{{ character.char_class.id_for_label }}">
+                  Class:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.alignment }}
+                <label class="char_text" for="{{ character.alignment.id_for_label }}">
+                  Alignment:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.age }}
+                <label class="char_text" for="{{ character.age.id_for_label }}">
+                  Age:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.height }}
+                <label class="char_text" for="{{ character.height.id_for_label }}">
+                  Height:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.weight }}
+                <label class="char_text" for="{{ character.weight.id_for_label }}">
+                  Weight:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.eyes }}
+                <label class="char_text" for="{{ character.eyes.id_for_label }}">
+                  Eyes:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.skin }}
+                <label class="char_text" for="{{ character.skin.id_for_label }}">
+                  Skin:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.hair }}
+                <label class="char_text" for="{{ character.hair.id_for_label }}">
+                  Hair:
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.character_appearance }}
+                <label class="char_text" for="{{ character.character_appearance.id_for_label }}">
+                  Character Appearance:
+                </label>
+              </div>
+            </div>
+          </div>
 
+          <!--  Character Stats-->
+          <div class="col-xs-3">
+            <div class="char_bar">
+              <div class="title_medium">
+                Stats:
+              </div>
+              <div class="char_value">
+                {{ character.strength }}
+                <label class="char_text" for="{{ character.strength.id_for_label }}">
+                  Strength
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.dexterity }}
+                <label class="char_text" for="{{ character.dexterity.id_for_label }}">
+                  Dexterity
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.constitution }}
+                <label class="char_text" for="{{ character.constitution.id_for_label }}">
+                  Constitution
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.intelligence }}
+                <label class="char_text" for="{{ character.intelligence.id_for_label }}">
+                  Intelligence
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.wisdom }}
+                <label class="char_text" for="{{ character.wisdom.id_for_label }}">
+                  Wisdom
+                </label>
+              </div>
+              <div class="char_value">
+                {{ character.charisma }}
+                <label class="char_text" for="{{ character.charisma.id_for_label }}">
+                  Charisma
+                </label>
+              </div>
+            </div>
+          </div>
 
-	<!-- Stat container with modifiers -->
-	<div class="container-fluid">
-		<div class="stat_bar">
-			<div class="stat_value">
-				{{ character.strength}}
-				<span class="stat_text">Strength</span>
-			</div>
-			<div class="stat_value">
-				{{ character.dexterity}}
-				<span class="stat_text">Dexterity</span>
-			</div>
-			<div class="stat_value">
-				{{ character.constitution}}
-				<span class="stat_text">Constitution</span>
-			</div>
-			<div class="stat_value">
-				{{ character.intelligence}}
-				<span class="stat_text">Intelligence</span>
-			</div>
-			<div class="stat_value">
-				{{ character.wisdom}}
-				<span class="stat_text">Wisdom</span>
-			</div>
-			<div class="stat_value">
-				{{ character.charisma}}
-				<span class="stat_text">Charisma</span>
-			</div>
-		</div>
+          <!-- Character Skills & Saving Throws -->
+          <div class="col-xs-3">
+            <div class="skill_bar">
+              <div class="title_small">
+                Saving Throws:
+              </div>
+              <div for="{{ character.strength_save.id_for_label }}">
+                {{ character.strength_save }} Strength
+              </div>
+              <div for="{{ character.dexterity_save.id_for_label }}">
+                {{ character.dexterity_save }} Dexterity
+              </div>
+              <div for="{{ character.constitution_save.id_for_label }}">
+                {{ character.constitution_save }} Constitution
+              </div>
+              <div for="{{ character.intelligence_save.id_for_label }}">
+                {{ character.intelligence_save }} Intelligence
+              </div>
+              <div for="{{ character.wisdom_save.id_for_label }}">
+                {{ character.wisdom_save }} Wisdom
+              </div>
+              <div for="{{ character.charisma_save.id_for_label }}">
+                {{ character.charisma_save }} Charisma
+              </div>
+              <div class="title_small">
+                Skills:
+              </div>
+              <div for="{{ character.acrobatics.id_for_label }}">
+                {{ character.acrobatics }} Acrobatics
+              </div>
+              <div for="{{ character.animal_handling.id_for_label }}">
+                {{ character.animal_handling }} Animal Handling
+              </div>
+              <div for="{{ character.arcana.id_for_label }}">
+                {{ character.arcana }} Arcana
+              </div>
+              <div for="{{ character.athletics.id_for_label }}">
+                {{ character.athletics }} Athletics
+              </div>
+              <div for="{{ character.deception.id_for_label }}">
+                {{ character.deception }} Deception
+              </div>
+              <div for="{{ character.history.id_for_label }}">
+                {{ character.history }} History
+              </div>
+              <div for="{{ character.insight.id_for_label }}">
+                {{ character.insight }} Insight
+              </div>
+              <div for="{{ character.intimidation.id_for_label }}">
+                {{ character.intimidation }} Intimidation
+              </div>
+              <div for="{{ character.investigation.id_for_label }}">
+                {{ character.investigation }} Investigation
+              </div>
+              <div for="{{ character.medicine.id_for_label }}">
+                {{ character.medicine }} Medicine
+              </div>
+              <div for="{{ character.nature.id_for_label }}">
+                {{ character.nature }} Nature
+              </div>
+              <div for="{{ character.perception.id_for_label }}">
+                {{ character.perception }} Perception
+              </div>
+              <div for="{{ character.performance.id_for_label }}">
+                {{ character.performance }} Performance
+              </div>
+              <div for="{{ character.persuasion.id_for_label }}">
+                {{ character.persuasion }} Persuasion
+              </div>
+              <div for="{{ character.religion.id_for_label }}">
+                {{ character.religion }} Religion
+              </div>
+              <div for="{{ character.sleight_of_hand.id_for_label }}">
+                {{ character.sleight_of_hand }} Sleight of Hand
+              </div>
+              <div for="{{ character.stealth.id_for_label }}">
+                {{ character.stealth }} Stealth
+              </div>
+              <div for="{{ character.survival.id_for_label }}">
+                {{ character.survival }} Survival
+              </div>
+            </div>
+          </div>
 
-		<div class="skill_bar">
-			<div class="title_medium">
-				Skills:
-			</div>
-			{{ form.acrobatics.errors }}
-			<div for="{{ form.acrobatics.id_for_label }}">
-				{{ form.acrobatics }} Acrobatics
-			</div>
+          <!-- Character Combat Stats -->
+          <div class="col-xs-3">
+            <div class="char_value">
+              {{ character.experience_points }}
+              <label class="char_text" for="{{ character.experience_points.id_for_label }}">
+                Experience Points:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.current_hit_points }}
+              <label class="char_text" for="{{ character.current_hit_points.id_for_label }}">
+                Current Hit Points:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.max_hit_points }}
+              <label class="char_text" for="{{ character.max_hit_points.id_for_label }}">
+                Max Hit Points:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.temporary_hit_points }}
+              <label class="char_text" for="{{ character.temporary_hit_points.id_for_label }}">
+                Temporary Hit Points:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.armor_class }}
+              <label class="char_text" for="{{ character.armor_class.id_for_label }}">
+                Armor Class:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.initiative }}
+              <label class="char_text" for="{{ character.initiative.id_for_label }}">
+                Initiative:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.speed }}
+              <label class="char_text" for="{{ character.speed.id_for_label }}">
+                Speed:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.hit_dice }}
+              <label class="char_text" for="{{ character.hit_dice.id_for_label }}">
+                Hit Dice:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.hit_dice_total }}
+              <label class="char_text" for="{{ character.hit_dice_total.id_for_label }}">
+                Total Hit Dice:
+              </label>
+            </div>
+          </div>
 
-			{{ form.animal_handling.errors }}
-			<div for="{{ form.animal_handling.id_for_label }}">
-				{{ form.animal_handling }} Animal Handling
-			</div>
+        </div>
+      </div>
 
+      <div class="col-xs-6">
+        <div class="row">
 
-			{{ form.arcana.errors }}
-			<div for="{{ form.arcana.id_for_label }}">
-				{{ form.arcana }} Arcana
-			</div>
+          <!-- Character Background -->
+          <div class="col-xs-6">
+            <div class="char_value">
+              {{ character.background }}
+              <label class="char_text" for="{{ character.background.id_for_label }}">
+                Background:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.character_backstory }}
+              <label class="char_text" for="{{ character.character_backstory.id_for_label }}">
+                Character Backstory:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.features_and_traits }}
+              <label class="char_text" for="{{ character.features_and_traits.id_for_label }}">
+                Features and Traits:
+              </label>
+            </div>
+          </div>
 
-			{{ form.athletics.errors }}
-			<div for="{{ form.athletics.id_for_label }}">
-				{{ form.athletics }} Athletics
-			</div>
+          <!-- Character Personality -->
+          <div class="col-xs-6">
+            <div class="char_value">
+              {{ character.personality_traits }}
+              <label class="char_text" for="{{ character.personality_traits.id_for_label }}">
+                Personality Traits:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.ideals }}
+              <label class="char_text" for="{{ character.ideals.id_for_label }}">
+                Ideals:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.bonds }}
+              <label class="char_text" for="{{ character.bonds.id_for_label }}">
+                Bonds:
+              </label>
+            </div>
+            <div class="char_value">
+              {{ character.flaws }}
+              <label class="char_text" for="{{ character.flaws.id_for_label }}">
+                Flaws:
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-			{{ form.deception.errors }}
-			<div for="{{ form.deception.id_for_label }}">
-				{{ form.deception }} Deception
-			</div>
+		<!-- Row 2 -->
+		<div class="row">
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-6">
 
-			{{ form.history.errors }}
-			<div for="{{ form.history.id_for_label }}">
-				{{ form.history }} History
-			</div>
+						<!-- Character List -->
+            <div class="col-xs-3">1</div>
 
-			{{ form.insight.errors }}
-			<div for="{{ form.insight.id_for_label }}">
-				{{ form.insight }} Insight
-			</div>
+						<!--  -->
+						<div class="col-xs-3">2</div>
 
-			{{ form.intimidation.errors }}
-			<div for="{{ form.intimidation.id_for_label }}">
-				{{ form.intimidation }} Intimidation
-			</div>
+						<!--  -->
+						<div class="col-xs-3">3</div>
 
-			{{ form.investigation.errors }}
-			<div for="{{ form.investigation.id_for_label }}">
-				{{ form.investigation }} Investigation
-			</div>
+						<!--  -->
+						<div class="col-xs-3">4</div>
 
-			{{ form.medicine.errors }}
-			<div for="{{ form.medicine.id_for_label }}">
-				{{ form.medicine }} Medicine
-			</div>
+					</div>
 
-			{{ form.nature.errors }}
-			<div for="{{ form.nature.id_for_label }}">
-				{{ form.nature }} Nature
-			</div>
+          <div class="col-xs-6">
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.perception.id_for_label }}">
-				{{ form.perception }} Perception
-			</div>
+						<!--  -->
+            <div class="col-xs-3">5</div>
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.performance.id_for_label }}">
-				{{ form.performance }} Performance
-			</div>
+						<!--  -->
+						<div class="col-xs-3">6</div>
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.persuasion.id_for_label }}">
-				{{ form.persuasion }} Persuasion
-			</div>
+						<!--  -->
+						<div class="col-xs-3">7</div>
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.religion.id_for_label }}">
-				{{ form.religion }} Religion
-			</div>
+						<!--  -->
+						<div class="col-xs-3">8</div>
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.sleight_of_hand.id_for_label }}">
-				{{ form.sleight_of_hand }} Sleight of Hand
-			</div>
+					</div>
+        </div>
+      </div>
+			<div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-6">
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.stealth.id_for_label }}">
-				{{ form.stealth }} Stealth
-			</div>
+						<!--  -->
+            <div class="col-xs-3">9</div>
 
-			{{ form.alignment.errors }}
-			<div for="{{ form.survival.id_for_label }}">
-				{{ form.survival }} Survival
-			</div>
-		</div>
-		<div>
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-		</div>
-		<div>
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-			{{ character.}}
-		</div>
-	</div>
+						<!--  -->
+						<div class="col-xs-3">10</div>
+
+						<!--  -->
+						<div class="col-xs-3">11</div>
+
+						<!--  -->
+						<div class="col-xs-3">12</div>
+
+					</div>
+
+          <div class="col-xs-6">
+
+						<!--  -->
+            <div class="col-xs-3">13</div>
+
+						<!--  -->
+						<div class="col-xs-3">14</div>
+
+						<!--  -->
+						<div class="col-xs-3">15</div>
+
+						<!--  -->
+						<div class="col-xs-3">16</div>
+
+					</div>
+        </div>
+      </div>
+    </div>
+
+		<!-- Row 3 -->
+		<div class="row">
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-6">
+
+						<!--  -->
+            <div class="col-xs-3">1</div>
+
+						<!--  -->
+						<div class="col-xs-3">2</div>
+
+						<!--  -->
+						<div class="col-xs-3">3</div>
+
+						<!--  -->
+						<div class="col-xs-3">4</div>
+
+					</div>
+
+          <div class="col-xs-6">
+
+						<!--  -->
+            <div class="col-xs-3">5</div>
+
+						<!--  -->
+						<div class="col-xs-3">6</div>
+
+						<!--  -->
+						<div class="col-xs-3">7</div>
+
+						<!--  -->
+						<div class="col-xs-3">8</div>
+
+					</div>
+        </div>
+      </div>
+			<div class="col-xs-6">
+        <div class="row">
+          <div class="col-xs-6">
+
+						<!--  -->
+            <div class="col-xs-3">9</div>
+
+						<!--  -->
+						<div class="col-xs-3">10</div>
+
+						<!--  -->
+						<div class="col-xs-3">11</div>
+
+						<!--  -->
+						<div class="col-xs-3">12</div>
+
+					</div>
+
+          <div class="col-xs-6">
+
+						<!--  -->
+            <div class="col-xs-3">13</div>
+
+						<!--  -->
+						<div class="col-xs-3">14</div>
+
+						<!--  -->
+						<div class="col-xs-3">15</div>
+
+						<!--  -->
+						<div class="col-xs-3">16</div>
+
+					</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 {% endblock content %}
+
+{% block footer %}{% endblock footer %}

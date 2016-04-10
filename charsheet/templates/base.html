@@ -31,34 +31,30 @@
 
   <body>
     <div class="container-fluid">
-      {% block header %}
         {% block navbar %}
           <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
-              <div class="navbar-brand topnav">
-                {% block charname %}{% endblock charname %}
+              <div>
+                <a class="navbar-brand topnav" href="#">D&D Character Sheets</a>
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                  {% block navlist %}{% endblock navlist %}
-                  <li>
-                    <a href="">Inventory</a>
-                  </li>
-                  <li>
-                    <a href="">Spells</a>
-                  </li>
-                  <li>
-                    <a href="">Biography</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'djangae_switch_accounts' %}">Log In</a>
-                  </li>
+                  {% block navlist %}
+                    <li>
+                      <a href="http://hardcodex.ru/" target="_blank">Spells</a>
+                    </li>
+                    <li>
+                      <a href="create">Create</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'djangae_switch_accounts' %}">Log In</a>
+                    </li>
+                  {% endblock navlist %}
                 </ul>
               </div>
             </div>
           </nav>
         {% endblock navbar %}
-      {% endblock header %}
       {% block content %}{% endblock content %}
       {% block footer %}
         <div class="container-fluid">

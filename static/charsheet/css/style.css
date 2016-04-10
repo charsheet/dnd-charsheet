@@ -4,7 +4,6 @@
 	font-style: italic;
 	text-align: left;
 	font-size: 23px;
-	margin-left: 35px;
 }
 
 .char_bar {
@@ -12,8 +11,6 @@
 	font-family: 'Muli', sans-serif;
 	font-size: 15px;
 	font-weight: bold, italic;
-	margin-left: 35px;
-	margin-bottom: 15px;
 }
 
 .char_text {
@@ -32,40 +29,13 @@
 	text-align: left;
 	font-size: 15px;
 	display: block;
-	margin-right: 14px;
-	margin-top: 10px;
-}
-
-.stat_bar {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold, italic;
-	margin-left: 35px;
-	margin-bottom: 15px;
-}
-
-.stat_text {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	font-size: 14px;
-	display: block;
-}
-
-.stat_value {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-align: left;
-	font-size: 14px;
-	display: block;
-	margin-bottom: 15px;
+	padding-bottom: 20px;
 }
 
 .skill_bar {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold, italic;
-	margin-left: 35px;
-	margin-bottom: 15px;
+	font-size: 15px;
 }
 
 .top_space {
@@ -86,7 +56,7 @@
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	font-size: 15px;
+	font-size: 16px;
 }
 
 .title_medium {
@@ -95,7 +65,6 @@
 	font-style: italic;
 	text-align: left;
 	font-size: 20px;
-	margin-bottom: 15px;
 }
 
 .title_large {
@@ -104,8 +73,6 @@
 	font-style: italic;
 	text-align: left;
 	font-size: 35px;
-	margin-left: 15px;
-	margin-bottom: 5px;
 }
 
 .footer {
@@ -113,9 +80,6 @@
 	position: fixed;
 	bottom: 0;
 	width:100%;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	padding-right: 55px;
 }
 
 .content_border {
@@ -125,26 +89,14 @@
 	bottom: 0;
 }
 
-.accordion-toggle:after {
-  font-family: 'FontAwesome';
-  content: "\f078";
-}
-.accordion-opened .accordion-toggle:after {
-  content: "\f054";
-}
-
-.left_pad {
-	padding-top: 25px;
-	padding-left: 55px;
-	width: 100%;
-}
-
 .btn_nav {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
 	text-align: left;
 	font-size: 23px;
-	margin-left: 55px;
-	margin-bottom: 10px;
+}
+
+.branding {
+	text-decoration: none;
 }
