@@ -57,7 +57,7 @@ class Character(models.Model):
 
     # Hit Dice
     hit_dice_total = models.IntegerField(null=True, blank=True)
-    hit_dice = models.TextField(blank=True)
+    hit_dice = models.CharField(max_length=200, blank=True)
 
     # Death Saves - I may switch this to a many to many field, but for now
     # I don't think it's worth it.
@@ -109,6 +109,14 @@ class Character(models.Model):
     sleight_of_hand = models.BooleanField(default=0)
     stealth = models.BooleanField(default=0)
     survival = models.BooleanField(default=0)
+
+    # Saving Throws
+    strength_save = models.BooleanField(default=0)
+    dexterity_save = models.BooleanField(default=0)
+    constitution_save = models.BooleanField(default=0)
+    intelligence_save = models.BooleanField(default=0)
+    wisdom_save = models.BooleanField(default=0)
+    charisma_save = models.BooleanField(default=0)
 
     personality_traits = models.TextField(blank=True)
     ideals = models.TextField(blank=True)
