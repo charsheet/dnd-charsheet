@@ -100,3 +100,7 @@
 .branding {
 	text-decoration: none;
 }
+
+#id_age {
+	width: 50px;
+}
