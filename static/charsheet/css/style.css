@@ -15,10 +15,9 @@
 
 .char_text {
 	font-family: 'Muli', sans-serif;
-	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	font-size: 14px;
+	font-size: 12px;
 	display: block;
 }
 
@@ -26,16 +25,63 @@
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
+	text-align: center;
 	font-size: 15px;
 	display: block;
 	padding-bottom: 20px;
+}
+
+.stat_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	font-size: 14px;
+	display: block;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.stat_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 24px;
+	display: block;
 }
 
 .skill_bar {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold, italic;
 	font-size: 15px;
+	margin-left: 20px;
+	margin-bottom: 25px;
+}
+
+.skill_label {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 14px;
+	padding-bottom: 5px;
+}
+
+.gen_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.gen_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 15px;
+	text-align: center;
+	display: block;
 }
 
 .top_space {
@@ -71,8 +117,19 @@
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
+	text-align: center;
+	font-size: 25px;
+	padding-bottom: 25px;
+}
+
+.char_header {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
 	font-size: 35px;
+	padding-bottom: 35px;
+	padding-top: 85px;
 }
 
 .footer {
@@ -97,6 +154,165 @@
 	font-size: 23px;
 }
 
-.branding {
-	text-decoration: none;
+#id_strength {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_dexterity {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_constitution {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_intelligence {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_wisdom {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_charisma {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_age {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_height {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_weight {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_current_hit_points {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_max_hit_points {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_temporary_hit_points {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_armor_class {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_initiative {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_speed {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_hit_dice {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_hit_dice_total {
+	width: 50px;
+	text-align: center;
+
+}
+
+#id_experience_points {
+	width: 100px;
+	text-align: center;
+
+}
+
+#id_character_appearance {
+	height: 100px;
+}
+
+#id_character_backstory {
+	height: 100px;
+}
+
+#id_personality_traits {
+	height: 100px;
+}
+
+#id_ideals {
+	height: 100px;
+}
+
+#id_bonds {
+	height: 100px;
+}
+
+#id_flaws {
+	height: 100px;
+}
+
+#id_race {
+	text-align: center;
+}
+
+#id_background {
+	text-align: center;
+}
+
+#id_alignment {
+	text-align: center;
+}
+
+#id_eyes {
+	text-align: center;
+}
+
+#id_skin {
+	text-align: center;
+}
+
+#id_hair {
+	text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

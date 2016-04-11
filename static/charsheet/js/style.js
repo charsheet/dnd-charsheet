@@ -1,13 +1,22 @@
 /*
->>>>>>> 80d7f48aaff1a75e14b4155961de7b8863fa0163
-$(document).ready(function(){
-    $("#str").click(function(){
-        $(this).hide();
-	});
-<<<<<<< HEAD
+$(document).ready(function() {
+    $('button').click(function() {
+        $('.vanish').fadeOut('slow');
+    });
 });
-=======
+
+$(document).ready(function() {
+    $('div').click(function() {
+        $(this).fadeOut('slow');
+    });
 });
+
+$(document).ready(function() {
+    $('.pull-me').click(function() {
+        $('.panel').slideToggle('slow')
+    });
+});
+
 */
 
 $(function (){
