@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'djangae.contrib.security',
     # 'djangae.contrib.uniquetool',
     'charsheet.apps.CharsheetConfig',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (
