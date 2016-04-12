@@ -1,3 +1,14 @@
+/*  OLD CHARACTER LABELS*/
+.char_header {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 35px;
+	padding-top: 85px;
+}
+
 .char_name {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
@@ -15,10 +26,9 @@
 
 .char_text {
 	font-family: 'Muli', sans-serif;
-	font-weight: bold;
 	font-style: italic;
 	text-align: left;
-	font-size: 14px;
+	font-size: 12px;
 	display: block;
 }
 
@@ -26,67 +36,133 @@
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
+	text-align: center;
 	font-size: 15px;
 	display: block;
 	padding-bottom: 20px;
 }
 
+/*  STAT CLASSES */
+.stat_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	font-size: 14px;
+	display: block;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.stat_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-size: 24px;
+	display: block;
+}
+
+.stat_form {
+	width: 75px;
+	text-align: center;
+
+}
+
+/*  SKILL CLASSES */
 .skill_bar {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold, italic;
 	font-size: 15px;
+	margin-left: 20px;
+	margin-bottom: 25px;
 }
 
-.top_space {
-	padding-top: 85px;
-}
-
-.text_small {
+.skill_label {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
-	font-style: italic, underline;
+	font-style: italic;
 	text-align: left;
-	font-size: 10px;
+	font-size: 14px;
+	padding-bottom: 5px;
+}
+
+/*  GENERAL CLASSES */
+.gen_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.gen_value {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 15px;
+	text-align: center;
 	display: block;
 }
 
-.title_small {
+.gen_form {
+	text-align: center;
+}
+
+.gen_form_sm {
+	width: 50px;
+	text-align: center;
+}
+
+/*  COMBAT CLASSES */
+.combat_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.combat_value {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
-	font-size: 16px;
+	font-size: 15px;
+	text-align: center;
+	display: block;
 }
 
-.title_medium {
+.combat_form {
+	width: 50px;
+	text-align: center;
+}
+
+.combat_form_lg {
+	width: 75px;
+	text-align: center;
+}
+
+/* BACKGROUND CLASSES */
+.background_text {
+	font-family: 'Muli', sans-serif;
+	font-style: italic;
+	text-align: left;
+	font-size: 12px;
+	display: block;
+	padding-bottom: 25px;
+}
+
+.background_value {
 	font-family: 'Muli', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	text-align: left;
-	font-size: 20px;
+	text-align: center;
+	font-size: 15px;
+	display: block;
 }
 
-.title_large {
-	font-family: 'Muli', sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	text-align: left;
-	font-size: 35px;
-}
-
-.footer {
-	text-align: right;
-	position: fixed;
-	bottom: 0;
-	width:100%;
-}
-
-.content_border {
-	border-style: solid;
-	border-radius: 5px;
-	border-width: 2px;
-	bottom: 0;
+.background_form {
+	height: 100px;
 }
 
 .btn_nav {
@@ -97,8 +173,12 @@
 	font-size: 23px;
 }
 
-.branding {
-	text-decoration: none;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 #id_age {

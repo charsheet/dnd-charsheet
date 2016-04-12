@@ -10,6 +10,12 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: auth_group
+  properties:
+  - name: name
+  - name: __key__
+    direction: desc
+
 - kind: charsheet_attacksandspellcasting
   properties:
   - name: __key__

@@ -7,545 +7,548 @@
 {% endblock scripts %}
 
 {% block content %}
-  <div class="top_space"></div>
+
   <div class="container-fluid">
 		<!-- Character Title -->
-		<div class="title_large">
-			{{ character.character_name}}
+		<div class="char_header">
+			{{ character.character_name }}: 3rd Level {{ character.race }} Druid
 		</div>
 	</div>
 
   <div class="container-fluid">
     <form action="" method="post">{% csrf_token %}
-    {{ form.non_field_errors }}
-    <!-- Row 1-->
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="row">
+      {% load widget_tweaks %}
+      {{ form.non_field_errors }}
 
-          <!--  Character Basic Info -->
-          <div class="col-xs-3">
-            <div class="char_bar">
+      <!-- Row 1-->
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="row">
+
+            <!-- Race, Class, Background -->
+            <div class="col-xs-5">
               {{ form.user.as_hidden }}
-              <div class="title_medium">
-                General Info:
-              </div>
-              <div class="char_value">
+              <div class="gen_value">
                 {{ form.race.errors }}
-                {{ form.race }}
-                <label class="char_text" for="{{ form.race.id_for_label }}">
-                  Race:
-                </label>
+                {{ form.race|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.race.id_for_label }}">
+                Race
+              </div>
+              <div class="gen_value">
                 {{ form.char_class.errors }}
-                {{ form.race }}
-                <label class="char_text" for="{{ form.char_class.id_for_label }}">
-                  Class:
-                </label>
+                {{ form.race|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.char_class.id_for_label }}">
+                Class
+              </div>
+              <div class="gen_value">
+                {{ form.background.errors }}
+                {{ form.background|add_class:"gen_form" }}
+              </div>
+              <div class="gen_text" for="{{ form.background.id_for_label }}">
+                Background
+              </div>
+              <div class="gen_value">
                 {{ form.alignment.errors }}
-                {{ form.alignment }}
-                <label class="char_text" for="{{ form.alignment.id_for_label }}">
-                  Alignment:
-                </label>
+                {{ form.alignment|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.alignment.id_for_label }}">
+                Alignment
+              </div>
+            </div>
+
+            <!-- Age, Heigh, Weight -->
+            <div class="col-xs-2">
+              <div class="gen_value">
                 {{ form.age.errors }}
-                {{ form.age }}
-                <label class="char_text" for="{{ form.age.id_for_label }}">
-                  Age:
-                </label>
+                {{ form.age|add_class:"gen_form_sm" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.age.id_for_label }}">
+                Age
+              </div>
+              <div class="gen_value">
                 {{ form.height.errors }}
-                {{ form.height }}
-                <label class="char_text" for="{{ form.height.id_for_label }}">
-                  Height:
-                </label>
+                {{ form.height|add_class:"gen_form_sm" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.height.id_for_label }}">
+                Height
+              </div>
+              <div class="gen_value">
                 {{ form.weight.errors }}
-                {{ form.weight }}
-                <label class="char_text" for="{{ form.weight.id_for_label }}">
-                  Weight:
-                </label>
+                {{ form.weight|add_class:"gen_form_sm" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.weight.id_for_label }}">
+                Weight
+              </div>
+            </div>
+
+            <!-- Eyes, Skin, Hair -->
+            <div class="col-xs-5">
+              <div class="gen_value">
                 {{ form.eyes.errors }}
-                {{ form.eyes }}
-                <label class="char_text" for="{{ form.eyes.id_for_label }}">
-                  Eyes:
-                </label>
+                {{ form.eyes|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.eyes.id_for_label }}">
+                Eyes
+              </div>
+              <div class="gen_value">
                 {{ form.skin.errors }}
-                {{ form.skin }}
-                <label class="char_text" for="{{ form.skin.id_for_label }}">
-                  Skin:
-                </label>
+                {{ form.skin|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
+              <div class="gen_text" for="{{ form.skin.id_for_label }}">
+                Skin
+              </div>
+              <div class="gen_value">
                 {{ form.hair.errors }}
-                {{ form.hair }}
-                <label class="char_text" for="{{ form.hair.id_for_label }}">
-                  Hair:
-                </label>
+                {{ form.hair|add_class:"gen_form" }}
               </div>
-              <div class="char_value">
-                {{ form.character_appearance.errors }}
-                {{ form.character_appearance }}
-                <label class="char_text" for="{{ form.character_appearance.id_for_label }}">
-                  Character Appearance:
-                </label>
-              </div>
-              <div>
-                <input type="submit" value="Update" />
+              <div class="gen_text" for="{{ form.hair.id_for_label }}">
+                Hair
               </div>
             </div>
-          </div>
 
-          <!--  Character Stats-->
-          <div class="col-xs-3">
-            <div class="char_bar">
-              <div class="title_medium">
-                Stats:
-              </div>
-              <div class="char_value">
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="row">
+
+            <!--  Character Stats-->
+            <div class="col-xs-4">
+              <div class="stat_value">
                 {{ form.strength.errors }}
-                {{ form.strength }}
-                <label class="char_text" for="{{ form.strength.id_for_label }}">
-                  Strength
-                </label>
+                {{ form.strength|add_class:"stat_form" }}
               </div>
-              <div class="char_value">
+              <div class="stat_text" for="{{ form.strength.id_for_label }}">
+                Strength
+              </div>
+              <div class="stat_value">
                 {{ form.dexterity.errors }}
-                {{ form.dexterity }}
-                <label class="char_text" for="{{ form.dexterity.id_for_label }}">
-                  Dexterity
-                </label>
+                {{ form.dexterity|add_class:"stat_form" }}
               </div>
-              <div class="char_value">
+              <div class="stat_text" for="{{ form.dexterity.id_for_label }}">
+                Dexterity
+              </div>
+              <div class="stat_value">
                 {{ form.constitution.errors }}
-                {{ form.constitution }}
-                <label class="char_text" for="{{ form.constitution.id_for_label }}">
-                  Constitution
-                </label>
+                {{ form.constitution|add_class:"stat_form" }}
               </div>
-              <div class="char_value">
+              <div class="stat_text" for="{{ form.constitution.id_for_label }}">
+                Constitution
+              </div>
+              <div class="stat_value">
                 {{ form.intelligence.errors }}
-                {{ form.intelligence }}
-                <label class="char_text" for="{{ form.intelligence.id_for_label }}">
-                  Intelligence
-                </label>
+                {{ form.intelligence|add_class:"stat_form" }}
               </div>
-              <div class="char_value">
+              <div class="stat_text" for="{{ form.intelligence.id_for_label }}">
+                Intelligence
+              </div>
+              <div class="stat_value">
                 {{ form.wisdom.errors }}
-                {{ form.wisdom }}
-                <label class="char_text" for="{{ form.wisdom.id_for_label }}">
-                  Wisdom
-                </label>
+                {{ form.wisdom|add_class:"stat_form" }}
               </div>
-              <div class="char_value">
+              <div class="stat_text" for="{{ form.wisdom.id_for_label }}">
+                Wisdom
+              </div>
+              <div class="stat_value">
                 {{ form.charisma.errors }}
-                {{ form.charisma }}
-                <label class="char_text" for="{{ form.charisma.id_for_label }}">
-                  Charisma
-                </label>
+                {{ form.charisma|add_class:"stat_form" }}
+              </div>
+              <div class="stat_text" for="{{ form.charisma.id_for_label }}">
+                Charisma
               </div>
             </div>
-          </div>
 
-          <!-- Character Skills & Saving Throws -->
-          <div class="col-xs-3">
-            <div class="skill_bar">
-              <div class="title_small">
+            <!-- Character Skills & Saving Throws -->
+            <div class="col-xs-4">
+              <div class="skill_label">
                 Saving Throws:
               </div>
-              {{ form.strength_save.errors }}
-              <div for="{{ form.strength_save.id_for_label }}">
-                {{ form.strength_save }} Strength
+              <div class="skill_bar">
+                {{ form.strength_save.errors }}
+                <div for="{{ form.strength_save.id_for_label }}">
+                  {{ form.strength_save }} Strength
+                </div>
+                {{ form.dexterity_save.errors }}
+                <div for="{{ form.dexterity_save.id_for_label }}">
+                  {{ form.dexterity_save }} Dexterity
+                </div>
+                {{ form.constitution_save.errors }}
+                <div for="{{ form.constitution_save.id_for_label }}">
+                  {{ form.constitution_save }} Constitution
+                </div>
+                {{ form.intelligence_save.errors }}
+                <div for="{{ form.intelligence_save.id_for_label }}">
+                  {{ form.intelligence_save }} Intelligence
+                </div>
+                {{ form.wisdom_save.errors }}
+                <div for="{{ form.wisdom_save.id_for_label }}">
+                  {{ form.wisdom_save }} Wisdom
+                </div>
+                {{ form.charisma_save.errors }}
+                <div for="{{ form.charisma_save.id_for_label }}">
+                  {{ form.charisma_save }} Charisma
+                </div>
               </div>
-              {{ form.dexterity_save.errors }}
-              <div for="{{ form.dexterity_save.id_for_label }}">
-                {{ form.dexterity_save }} Dexterity
-              </div>
-              {{ form.constitution_save.errors }}
-              <div for="{{ form.constitution_save.id_for_label }}">
-                {{ form.constitution_save }} Constitution
-              </div>
-              {{ form.intelligence_save.errors }}
-              <div for="{{ form.intelligence_save.id_for_label }}">
-                {{ form.intelligence_save }} Intelligence
-              </div>
-              {{ form.wisdom_save.errors }}
-              <div for="{{ form.wisdom_save.id_for_label }}">
-                {{ form.wisdom_save }} Wisdom
-              </div>
-              {{ form.charisma_save.errors }}
-              <div for="{{ form.charisma_save.id_for_label }}">
-                {{ form.charisma_save }} Charisma
-              </div>
-              <div class="title_small">
+              <div class="skill_label">
                 Skills:
               </div>
-              {{ form.acrobatics.errors }}
-              <div for="{{ form.acrobatics.id_for_label }}">
-                {{ form.acrobatics }} Acrobatics
-              </div>
-              {{ form.animal_handling.errors }}
-              <div for="{{ form.animal_handling.id_for_label }}">
-                {{ form.animal_handling }} Animal Handling
-              </div>
-              {{ form.arcana.errors }}
-              <div for="{{ form.arcana.id_for_label }}">
-                {{ form.arcana }} Arcana
-              </div>
-              {{ form.athletics.errors }}
-              <div for="{{ form.athletics.id_for_label }}">
-                {{ form.athletics }} Athletics
-              </div>
-              {{ form.deception.errors }}
-              <div for="{{ form.deception.id_for_label }}">
-                {{ form.deception }} Deception
-              </div>
-              {{ form.history.errors }}
-              <div for="{{ form.history.id_for_label }}">
-                {{ form.history }} History
-              </div>
-              {{ form.insight.errors }}
-              <div for="{{ form.insight.id_for_label }}">
-                {{ form.insight }} Insight
-              </div>
-              {{ form.intimidation.errors }}
-              <div for="{{ form.intimidation.id_for_label }}">
-                {{ form.intimidation }} Intimidation
-              </div>
-              {{ form.investigation.errors }}
-              <div for="{{ form.investigation.id_for_label }}">
-                {{ form.investigation }} Investigation
-              </div>
-              {{ form.medicine.errors }}
-              <div for="{{ form.medicine.id_for_label }}">
-                {{ form.medicine }} Medicine
-              </div>
-              {{ form.nature.errors }}
-              <div for="{{ form.nature.id_for_label }}">
-                {{ form.nature }} Nature
-              </div>
-              {{ form.perception.errors }}
-              <div for="{{ form.perception.id_for_label }}">
-                {{ form.perception }} Perception
-              </div>
-              {{ form.performance.errors }}
-              <div for="{{ form.performance.id_for_label }}">
-                {{ form.performance }} Performance
-              </div>
-              {{ form.persuasion.errors }}
-              <div for="{{ form.persuasion.id_for_label }}">
-                {{ form.persuasion }} Persuasion
-              </div>
-              {{ form.religion.errors }}
-              <div for="{{ form.religion.id_for_label }}">
-                {{ form.religion }} Religion
-              </div>
-              {{ form.sleight_of_hand.errors }}
-              <div for="{{ form.sleight_of_hand.id_for_label }}">
-                {{ form.sleight_of_hand }} Sleight of Hand
-              </div>
-              {{ form.stealth.errors }}
-              <div for="{{ form.stealth.id_for_label }}">
-                {{ form.stealth }} Stealth
-              </div>
-              {{ form.survival.errors }}
-              <div for="{{ form.survival.id_for_label }}">
-                {{ form.survival }} Survival
+              <div class="skill_bar">
+                {{ form.acrobatics.errors }}
+                <div for="{{ form.acrobatics.id_for_label }}">
+                  {{ form.acrobatics }} Acrobatics
+                </div>
+                {{ form.animal_handling.errors }}
+                <div for="{{ form.animal_handling.id_for_label }}">
+                  {{ form.animal_handling }} Animal Handling
+                </div>
+                {{ form.arcana.errors }}
+                <div for="{{ form.arcana.id_for_label }}">
+                  {{ form.arcana }} Arcana
+                </div>
+                {{ form.athletics.errors }}
+                <div for="{{ form.athletics.id_for_label }}">
+                  {{ form.athletics }} Athletics
+                </div>
+                {{ form.deception.errors }}
+                <div for="{{ form.deception.id_for_label }}">
+                  {{ form.deception }} Deception
+                </div>
+                {{ form.history.errors }}
+                <div for="{{ form.history.id_for_label }}">
+                  {{ form.history }} History
+                </div>
+                {{ form.insight.errors }}
+                <div for="{{ form.insight.id_for_label }}">
+                  {{ form.insight }} Insight
+                </div>
+                {{ form.intimidation.errors }}
+                <div for="{{ form.intimidation.id_for_label }}">
+                  {{ form.intimidation }} Intimidation
+                </div>
+                {{ form.investigation.errors }}
+                <div for="{{ form.investigation.id_for_label }}">
+                  {{ form.investigation }} Investigation
+                </div>
+                {{ form.medicine.errors }}
+                <div for="{{ form.medicine.id_for_label }}">
+                  {{ form.medicine }} Medicine
+                </div>
+                {{ form.nature.errors }}
+                <div for="{{ form.nature.id_for_label }}">
+                  {{ form.nature }} Nature
+                </div>
+                {{ form.perception.errors }}
+                <div for="{{ form.perception.id_for_label }}">
+                  {{ form.perception }} Perception
+                </div>
+                {{ form.performance.errors }}
+                <div for="{{ form.performance.id_for_label }}">
+                  {{ form.performance }} Performance
+                </div>
+                {{ form.persuasion.errors }}
+                <div for="{{ form.persuasion.id_for_label }}">
+                  {{ form.persuasion }} Persuasion
+                </div>
+                {{ form.religion.errors }}
+                <div for="{{ form.religion.id_for_label }}">
+                  {{ form.religion }} Religion
+                </div>
+                {{ form.sleight_of_hand.errors }}
+                <div for="{{ form.sleight_of_hand.id_for_label }}">
+                  {{ form.sleight_of_hand }} Sleight of Hand
+                </div>
+                {{ form.stealth.errors }}
+                <div for="{{ form.stealth.id_for_label }}">
+                  {{ form.stealth }} Stealth
+                </div>
+                {{ form.survival.errors }}
+                <div for="{{ form.survival.id_for_label }}">
+                  {{ form.survival }} Survival
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Character Combat Stats -->
-          <div class="col-xs-3">
-            <div class="char_value">
-              {{ form.experience_points.errors }}
-              {{ form.experience_points }}
-              <label class="char_text" for="{{ form.experience_points.id_for_label }}">
-                Experience Points:
-              </label>
+            <!-- Character Combat Stats -->
+            <div class="col-xs-4">
+              <div class="combat_value">
+                {{ form.experience_points.errors }}
+                {{ form.experience_points|add_class:"combat_form_lg" }}
+              </div>
+              <div class="combat_text" for="{{ form.experience_points.id_for_label }}">
+                Experience Points
+              </div>
+              <div class="combat_value">
+                {{ form.current_hit_points.errors }}
+                {{ form.current_hit_points|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.current_hit_points.id_for_label }}">
+                Current Hit Points
+              </div>
+              <div class="combat_value">
+                {{ form.max_hit_points.errors }}
+                {{ form.max_hit_points|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.max_hit_points.id_for_label }}">
+                Max Hit Points
+              </div>
+              <div class="combat_value">
+                {{ form.temporary_hit_points.errors }}
+                {{ form.temporary_hit_points|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.temporary_hit_points.id_for_label }}">
+                Temporary Hit Points
+              </div>
+              <div class="combat_value">
+                {{ form.armor_class.errors }}
+                {{ form.armor_class|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.armor_class.id_for_label }}">
+                Armor Class
+              </div>
+              <div class="combat_value">
+                {{ form.initiative.errors }}
+                {{ form.initiative|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.initiative.id_for_label }}">
+                Initiative
+              </div>
+              <div class="combat_value">
+                {{ form.speed.errors }}
+                {{ form.speed|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.speed.id_for_label }}">
+                Speed
+              </div>
+              <div class="combat_value">
+                {{ form.hit_dice.errors }}
+                {{ form.hit_dice|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.hit_dice.id_for_label }}">
+                Hit Dice
+              </div>
+              <div class="combat_value">
+                {{ form.hit_dice_total.errors }}
+                {{ form.hit_dice_total|add_class:"combat_form" }}
+              </div>
+              <div class="combat_text" for="{{ form.hit_dice_total.id_for_label }}">
+                Total Hit Dice
+              </div>
             </div>
-            <div class="char_value">
-              {{ form.current_hit_points.errors }}
-              {{ form.current_hit_points }}
-              <label class="char_text" for="{{ form.current_hit_points.id_for_label }}">
-                Current Hit Points:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.max_hit_points.errors }}
-              {{ form.max_hit_points }}
-              <label class="char_text" for="{{ form.max_hit_points.id_for_label }}">
-                Max Hit Points:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.temporary_hit_points.errors }}
-              {{ form.temporary_hit_points }}
-              <label class="char_text" for="{{ form.temporary_hit_points.id_for_label }}">
-                Temporary Hit Points:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.armor_class.errors }}
-              {{ form.armor_class }}
-              <label class="char_text" for="{{ form.armor_class.id_for_label }}">
-                Armor Class:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.initiative.errors }}
-              {{ form.initiative }}
-              <label class="char_text" for="{{ form.initiative.id_for_label }}">
-                Initiative:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.speed.errors }}
-              {{ form.speed }}
-              <label class="char_text" for="{{ form.speed.id_for_label }}">
-                Speed:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.hit_dice.errors }}
-              {{ form.hit_dice }}
-              <label class="char_text" for="{{ form.hit_dice.id_for_label }}">
-                Hit Dice:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.hit_dice_total.errors }}
-              {{ form.hit_dice_total }}
-              <label class="char_text" for="{{ form.hit_dice_total.id_for_label }}">
-                Total Hit Dice:
-              </label>
-            </div>
-          </div>
 
+          </div>
         </div>
-      </div>
+        <div class="col-xs-3">
+          <div class="row">
 
-      <div class="col-xs-6">
-        <div class="row">
+            <!-- Character Personality -->
+            <div class="col-xs-6">
+              <div class="background_value">
+                {{ form.character_appearance.errors }}
+                {{ form.character_appearance|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.character_appearance.id_for_label }}">
+                Character Appearance
+              </div>
+              <div class="background_value">
+                {{ form.character_backstory.errors }}
+                {{ form.character_backstory|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.character_backstory.id_for_label }}">
+                Character Backstory
+              </div>
+              <div class="background_value">
+                {{ form.personality_traits.errors }}
+                {{ form.personality_traits|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.personality_traits.id_for_label }}">
+                Personality Traits
+              </div>
+              <div class="background_value">
+                {{ form.ideals.errors }}
+                {{ form.ideals|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.ideals.id_for_label }}">
+                Ideals
+              </div>
+              <div class="background_value">
+                {{ form.bonds.errors }}
+                {{ form.bonds|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.bonds.id_for_label }}">
+                Bonds
+              </div>
+              <div class="background_value">
+                {{ form.flaws.errors }}
+                {{ form.flaws|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.flaws.id_for_label }}">
+                Flaws
+              </div>
+              <div class="background_value">
+                {{ form.features_and_traits.errors }}
+                {{ form.features_and_traits|add_class:"background_form" }}
+              </div>
+              <div class="background_text" for="{{ form.features_and_traits.id_for_label }}">
+                Features and Traits
+              </div>
+            </div>
 
-          <!-- Character Background -->
-          <div class="col-xs-6">
-            <div class="char_value">
-              {{ form.background.errors }}
-              {{ form.background }}
-              <label class="char_text" for="{{ form.background.id_for_label }}">
-                Background:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.character_backstory.errors }}
-              {{ form.character_backstory }}
-              <label class="char_text" for="{{ form.character_backstory.id_for_label }}">
-                Character Backstory:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.features_and_traits.errors }}
-              {{ form.features_and_traits }}
-              <label class="char_text" for="{{ form.features_and_traits.id_for_label }}">
-                Features and Traits:
-              </label>
-            </div>
-          </div>
-
-          <!-- Character Personality -->
-          <div class="col-xs-6">
-            <div class="char_value">
-              {{ form.personality_traits.errors }}
-              {{ form.personality_traits }}
-              <label class="char_text" for="{{ form.personality_traits.id_for_label }}">
-                Personality Traits:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.ideals.errors }}
-              {{ form.ideals }}
-              <label class="char_text" for="{{ form.ideals.id_for_label }}">
-                Ideals:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.bonds.errors }}
-              {{ form.bonds }}
-              <label class="char_text" for="{{ form.bonds.id_for_label }}">
-                Bonds:
-              </label>
-            </div>
-            <div class="char_value">
-              {{ form.flaws.errors }}
-              {{ form.flaws }}
-              <label class="char_text" for="{{ form.flaws.id_for_label }}">
-                Flaws:
-              </label>
-            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Row 2 -->
-		<div class="row">
-      <div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
+      <!-- Row 2 -->
+  		<div class="row">
+        <div class="col-xs-6">
+          <div class="row">
+            <div class="col-xs-6">
 
-						<!-- Character List -->
-            <div class="col-xs-3">1</div>
+  						<!--  -->
+              <div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">2</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">3</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">4</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-					</div>
+  					</div>
 
-          <div class="col-xs-6">
+            <div class="col-xs-6">
 
-						<!--  -->
-            <div class="col-xs-3">5</div>
+  						<!--  -->
+              <div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">6</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">7</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">8</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-					</div>
+  					</div>
+          </div>
+        </div>
+  			<div class="col-xs-6">
+          <div class="row">
+            <div class="col-xs-6">
+
+  						<!--  -->
+              <div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  					</div>
+
+            <div class="col-xs-6">
+
+  						<!--  -->
+              <div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  					</div>
+          </div>
         </div>
       </div>
-			<div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
 
-						<!--  -->
-            <div class="col-xs-3">9</div>
+  		<!-- Row 3 -->
+  		<div class="row">
+        <div class="col-xs-6">
+          <div class="row">
+            <div class="col-xs-6">
 
-						<!--  -->
-						<div class="col-xs-3">10</div>
+  						<!--  -->
+              <div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">11</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">12</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-					</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-          <div class="col-xs-6">
+  					</div>
 
-						<!--  -->
-            <div class="col-xs-3">13</div>
+            <div class="col-xs-6">
 
-						<!--  -->
-						<div class="col-xs-3">14</div>
+  						<!--  -->
+              <div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">15</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-						<!--  -->
-						<div class="col-xs-3">16</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
 
-					</div>
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  					</div>
+          </div>
+        </div>
+  			<div class="col-xs-6">
+          <div class="row">
+            <div class="col-xs-6">
+
+  						<!--  -->
+              <div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  					</div>
+
+            <div class="col-xs-6">
+
+  						<!--  -->
+              <div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  						<!--  -->
+  						<div class="col-xs-3"></div>
+
+  					</div>
+          </div>
         </div>
       </div>
-    </div>
-
-		<!-- Row 3 -->
-		<div class="row">
-      <div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">1</div>
-
-						<!--  -->
-						<div class="col-xs-3">2</div>
-
-						<!--  -->
-						<div class="col-xs-3">3</div>
-
-						<!--  -->
-						<div class="col-xs-3">4</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">5</div>
-
-						<!--  -->
-						<div class="col-xs-3">6</div>
-
-						<!--  -->
-						<div class="col-xs-3">7</div>
-
-						<!--  -->
-						<div class="col-xs-3">8</div>
-
-					</div>
-        </div>
+      <div>
+        <input type="submit" value="Update" />
       </div>
-			<div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">9</div>
-
-						<!--  -->
-						<div class="col-xs-3">10</div>
-
-						<!--  -->
-						<div class="col-xs-3">11</div>
-
-						<!--  -->
-						<div class="col-xs-3">12</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">13</div>
-
-						<!--  -->
-						<div class="col-xs-3">14</div>
-
-						<!--  -->
-						<div class="col-xs-3">15</div>
-
-						<!--  -->
-						<div class="col-xs-3">16</div>
-
-					</div>
-        </div>
-      </div>
-    </div>
-
+    </form>
   </div>
 
 {% endblock content %}
