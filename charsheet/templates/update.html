@@ -18,6 +18,7 @@
   <div class="container-fluid">
     <form action="" method="post">{% csrf_token %}
       {% load widget_tweaks %}
+      {{ form.errors }}
       {{ form.non_field_errors }}
 
       <!-- Row 1-->
@@ -29,18 +30,19 @@
             <div class="col-xs-5">
               {{ form.user.as_hidden }}
               <div class="gen_value">
+                {{ form.character_name.errors }}
+                {{ form.character_name|add_class:"gen_form" }}
+              </div>
+              <div class="gen_text" for="{{ form.character_name.id_for_label }}">
+                Character Name
+              </div>
+
+              <div class="gen_value">
                 {{ form.race.errors }}
                 {{ form.race|add_class:"gen_form" }}
               </div>
               <div class="gen_text" for="{{ form.race.id_for_label }}">
                 Race
-              </div>
-              <div class="gen_value">
-                {{ form.char_class.errors }}
-                {{ form.race|add_class:"gen_form" }}
-              </div>
-              <div class="gen_text" for="{{ form.char_class.id_for_label }}">
-                Class
               </div>
               <div class="gen_value">
                 {{ form.background.errors }}

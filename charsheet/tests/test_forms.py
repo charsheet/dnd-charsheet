@@ -4,13 +4,14 @@ from django.test import TestCase
 from charsheet.forms import CharacterForm
 from charsheet.models import Character
 
+
 User = get_user_model()
 
+
 class CharacterFormTest(TestCase):
-    test_user = User.objects.pre_create_google_user(email='testcase@example.com')
 
     form_data = {
-        'user': test_user,
+        #'user': self.test_user,
         'player_name': 'Test Player',
         'character_name': 'Test Character',
         'background': "A Character's background",
@@ -96,6 +97,7 @@ class CharacterFormTest(TestCase):
         'spell_attack_bonus': 3,
     }
 
+
     def test_valid_data(self):
         form = CharacterForm(data=self.form_data)
         self.assertTrue(form.is_valid())
@@ -105,3 +107,11 @@ class CharacterFormTest(TestCase):
                                              password='l33tpassword')
         character.save()
         self.assertEqual(character.character_name, self.form_data['character_name'])
+
+    def test_blank_data(self):
+        form = CharacterForm({})
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors, {
+            'character_name': [u'This field is required.'],
+            'alignment': [u'This field is required.'],
+        })
