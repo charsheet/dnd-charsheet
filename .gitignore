@@ -5,6 +5,7 @@ __pycache__/
 *.swp
 
 /.*
+!/.travis.yml
 !/.gitignore
 !/.gitmodules
 
