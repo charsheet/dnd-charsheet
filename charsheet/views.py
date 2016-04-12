@@ -131,7 +131,7 @@ class CharacterUpdateView(generic.UpdateView):
         Handles GET requests and instantiates blank versions of the form
         and its inline formsets.
         """
-        self.object = None
+        self.object = self.get_object()
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         characterclass_form = CharacterClassFormset()
@@ -151,7 +151,7 @@ class CharacterUpdateView(generic.UpdateView):
         formsets with the passed POST variables and then checking them for
         validity.
         """
-        self.object = None
+        self.object = self.get_object()
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         characterclass_form = CharacterClassFormset(self.request.POST)
