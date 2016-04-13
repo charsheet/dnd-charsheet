@@ -230,9 +230,12 @@ class CharacterModelTest(TestCase):
         self.assertEqual(character.investigation_modifier, -2)
         self.assertEqual(character.medicine_modifier, 6)
         self.assertEqual(character.nature_modifier, 0)
+        self.assertEqual(character.perception_modifier, 4)
         self.assertEqual(character.performance_modifier, 1)
         self.assertEqual(character.persuasion_modifier, 3)
         self.assertEqual(character.religion_modifier, -2)
         self.assertEqual(character.sleight_of_hand_modifier, 2)
         self.assertEqual(character.stealth_modifier, 2)
         self.assertEqual(character.survival_modifier, 6)
+
+        self.assertEqual(character.passive_perception, 14)
