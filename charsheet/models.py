@@ -52,7 +52,6 @@ class Character(models.Model):
     current_hit_points = models.IntegerField(null=True, blank=True)
     temporary_hit_points = models.IntegerField(null=True, blank=True)
     armor_class = models.IntegerField(null=True, blank=True)
-    initiative = models.IntegerField(null=True, blank=True)
     speed = models.IntegerField(null=True, blank=True, default=25)
     inspiration = models.IntegerField(null=True, blank=True)
     proficiency_bonus = models.IntegerField(null=True, blank=True)
@@ -253,6 +252,10 @@ class Character(models.Model):
     @property
     def survival_modifier(self):
         return mf(self.survival, self.wisdom_modifier, 2)
+
+    @property
+    def initiative(self):
+        return self.dexterity_modifier
 
     def __str__(self):
         return self.character_name
