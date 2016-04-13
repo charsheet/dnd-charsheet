@@ -257,6 +257,10 @@ class Character(models.Model):
     def initiative(self):
         return self.dexterity_modifier
 
+    @property
+    def passive_perception(self):
+        return self.perception_modifier + 10
+
     def __str__(self):
         return self.character_name
 
