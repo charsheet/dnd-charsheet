@@ -8,6 +8,8 @@ from django.core.urlresolvers import reverse
 #from django.contrib.auth.models import User
 from djangae.contrib.gauth.datastore.models import GaeDatastoreUser
 
+from .tools.modified_fields import modified_field as mf
+
 # Create your models here.
 
 @python_2_unicode_compatible
@@ -131,6 +133,126 @@ class Character(models.Model):
     spellcasting_ability = models.CharField(max_length=50, blank=True)
     spell_save_dc = models.IntegerField(null=True, blank=True)
     spell_attack_bonus = models.IntegerField(null=True, blank=True)
+
+    @property
+    def strength_modifier(self):
+        return (self.strength - 10) / 2
+
+    @property
+    def dexterity_modifier(self):
+        return (self.dexterity - 10) / 2
+
+    @property
+    def constitution_modifier(self):
+        return (self.constitution - 10) / 2
+
+    @property
+    def intelligence_modifier(self):
+        return (self.intelligence - 10) / 2
+
+    @property
+    def wisdom_modifier(self):
+        return (self.wisdom - 10) / 2
+
+    @property
+    def charisma_modifier(self):
+        return (self.charisma - 10) / 2
+
+    @property
+    def strength_save_modifier(self):
+        return mf(self.strength_save, self.strength_modifier, 2)
+
+    @property
+    def dexterity_save_modifier(self):
+        return mf(self.dexterity_save, self.dexterity_modifier, 2)
+
+    @property
+    def constitution_save_modifier(self):
+        return mf(self.constitution_save, self.constitution_modifier, 2)
+
+    @property
+    def intelligence_save_modifier(self):
+        return mf(self.intelligence_save, self.intelligence_modifier, 2)
+
+    @property
+    def wisdom_save_modifier(self):
+        return mf(self.wisdom_save, self.wisdom_modifier, 2)
+
+    @property
+    def charisma_save_modifier(self):
+        return mf(self.charisma_save, self.charisma_modifier, 2)
+
+    @property
+    def acrobatics_modifier(self):
+        return mf(self.acrobatics, self.dexterity_modifier, 2)
+
+    @property
+    def animal_handling_modifier(self):
+        return mf(self.animal_handling, self.wisdom_modifier, 2)
+
+    @property
+    def arcana_modifier(self):
+        return mf(self.arcana, self.intelligence_modifier, 2)
+
+    @property
+    def athletics_modifier(self):
+        return mf(self.athletics, self.strength_modifier, 2)
+
+    @property
+    def deception_modifier(self):
+        return mf(self.deception, self.charisma_modifier, 2)
+
+    @property
+    def history_modifier(self):
+        return mf(self.history, self.intelligence_modifier, 2)
+
+    @property
+    def insight_modifier(self):
+        return mf(self.insight, self.wisdom_modifier, 2)
+
+    @property
+    def intimidation_modifier(self):
+        return mf(self.intimidation, self.charisma_modifier, 2)
+
+    @property
+    def investigation_modifier(self):
+        return mf(self.investigation, self.intelligence_modifier, 2)
+
+    @property
+    def medicine_modifier(self):
+        return mf(self.medicine, self.wisdom_modifier, 2)
+
+    @property
+    def nature_modifier(self):
+        return mf(self.nature, self.intelligence_modifier, 2)
+
+    @property
+    def perception_modifier(self):
+        return mf(self.perception, self.wisdom_modifier, 2)
+
+    @property
+    def performance_modifier(self):
+        return mf(self.performance, self.charisma_modifier, 2)
+
+    @property
+    def persuasion_modifier(self):
+        return mf(self.persuasion, self.charisma_modifier, 2)
+
+    @property
+    def religion_modifier(self):
+        return mf(self.religion, self.intelligence_modifier, 2)
+
+    @property
+    def sleight_of_hand_modifier(self):
+        return mf(self.sleight_of_hand, self.dexterity_modifier, 2)
+
+    @property
+    def stealth_modifier(self):
+        return mf(self.stealth, self.dexterity_modifier, 2)
+
+    @property
+    def survival_modifier(self):
+        return mf(self.survival, self.wisdom_modifier, 2)
 
     def __str__(self):
         return self.character_name
