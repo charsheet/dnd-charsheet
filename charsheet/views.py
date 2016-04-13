@@ -199,7 +199,7 @@ class CharacterUpdateView(generic.UpdateView):
         user = self.request.user
         form.instance.user = user
 
-        return super(CharacterCreateView, self).form_valid(form)
+        return super(CharacterUpdateView, self).form_valid(form)
         #return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form, characterclass_form):

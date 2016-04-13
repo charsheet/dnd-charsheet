@@ -3,7 +3,10 @@
 {% block scripts %}
   {% load staticfiles %}
   <!-- Import JQuery style.js) -->
+  <script src="{% static 'charsheet/js/jquery.formset.js' %}"></script>
+  <script src="{% static 'charsheet/js/django.inline.js' %}"></script>
   <script src="{% static 'charsheet/js/style.js' %}"></script>
+
 {% endblock scripts %}
 
 {% block content %}
@@ -402,77 +405,94 @@
 
       <!-- Row 2 -->
   		<div class="row">
-        <div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6">
+        <fieldset>
+            <legend>Character Class</legend>
+            {{ characterclass_form.management_form }}
+            {{ characterclass_form.non_form_errors }}
+            {% for form in characterclass_form %}
+                {{ form.id }}
+                <div class="inline {{ characterclass_form.prefix }}">
+                    {{ form.char_class.errors }}
+                    {{ form.char_class.label_tag }}
+                    {{ form.char_class }}
 
-  						<!--  -->
-              <div class="col-xs-3"></div>
+                    {{ form.level.errors }}
+                    {{ form.level.label_tag }}
+                    {{ form.level }}
+                </div>
+            {% endfor %}
+            {{ equipment_form.management_form }}
+            {{ equipment_form.non_form_errors }}
+            {% for form in equipment_form %}
+                {{ form.id }}
+                <div class="inline {{ equipment_form.prefix }}">
+                    {{ form.quantity.errors }}
+                    {{ form.quantity.label_tag }}
+                    {{ form.quantity }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.name.errors }}
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.description.errors }}
+                    {{ form.description.label_tag }}
+                    {{ form.description }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.weight.errors }}
+                    {{ form.weight.label_tag }}
+                    {{ form.weight }}
 
-  					</div>
+                    {{ form.value.errors }}
+                    {{ form.value.label_tag }}
+                    {{ form.value }}
+                </div>
+            {% endfor %}
+            {{ attacksandspellcasting_form.management_form }}
+            {{ attacksandspellcasting_form.non_form_errors }}
+            {% for form in attacksandspellcasting_form %}
+                {{ form.id }}
+                <div class="inline {{ attacksandspellcasting_form.prefix }}">
+                    {{ form.attack.errors }}
+                    {{ form.attack.label_tag }}
+                    {{ form.attack }}
 
-            <div class="col-xs-6">
+                    {{ form.bonus.errors }}
+                    {{ form.bonus.label_tag }}
+                    {{ form.bonus }}
 
-  						<!--  -->
-              <div class="col-xs-3"></div>
+                    {{ form.damage.errors }}
+                    {{ form.damage.label_tag }}
+                    {{ form.damage }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.damage_type.errors }}
+                    {{ form.damage_type.label_tag }}
+                    {{ form.damage_type }}
+                </div>
+            {% endfor %}
+            {{ spells_form.management_form }}
+            {{ spells_form.non_form_errors }}
+            {% for form in spells_form %}
+                {{ form.id }}
+                <div class="inline {{ spells_form.prefix }}">
+                    {{ form.level_or_cantrip.errors }}
+                    {{ form.level_or_cantrip.label_tag }}
+                    {{ form.level_or_cantrip }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.name.errors }}
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
 
-  						<!--  -->
-  						<div class="col-xs-3"></div>
+                    {{ form.description.errors }}
+                    {{ form.description.label_tag }}
+                    {{ form.description }}
 
-  					</div>
-          </div>
-        </div>
-  			<div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6">
+                    {{ form.prepared.errors }}
+                    {{ form.prepared.label_tag }}
+                    {{ form.prepared }}
+                </div>
+            {% endfor %}
+        </fieldset>
 
-  						<!--  -->
-              <div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  					</div>
-
-            <div class="col-xs-6">
-
-  						<!--  -->
-              <div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  						<!--  -->
-  						<div class="col-xs-3"></div>
-
-  					</div>
-          </div>
-        </div>
-      </div>
 
   		<!-- Row 3 -->
   		<div class="row">
