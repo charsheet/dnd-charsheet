@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 
 #from django.contrib.auth.models import User
 from djangae.contrib.gauth.datastore.models import GaeDatastoreUser
+from djangae import fields
 
 from .tools.modified_fields import modified_field as mf
 
