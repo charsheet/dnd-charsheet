@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     # 'djangae.contrib.uniquetool',
     'charsheet.apps.CharsheetConfig',
     'widget_tweaks',
+    'django_nose',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,6 +89,12 @@ CSP_REPORTS_SAVE = True
 CSP_REPORTS_EMAIL_ADMINS = False
 
 ROOT_URLCONF = 'dndcharsheet.urls'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=charsheet',
+]
 
 WSGI_APPLICATION = 'dndcharsheet.wsgi.application'
 
