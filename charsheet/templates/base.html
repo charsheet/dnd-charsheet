@@ -45,7 +45,11 @@
                       <a href="create">Create</a>
                     </li>
                     <li>
-                      <a href="{% url 'djangae_switch_accounts' %}">Log In</a>
+                      {% if user.is_authenticated %}
+                      <a href="{% url 'logout' %}">Log Out</a>
+                      {% else %}
+                      <a href="{% url 'login' %}">Log In</a>
+                      {% endif %}
                     </li>
                   {% endblock navlist %}
                 </ul>

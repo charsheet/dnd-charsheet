@@ -2,6 +2,9 @@ from django.shortcuts import render, render_to_response
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.views import generic
 from django.http import Http404
+from django.http import HttpResponseRedirect
+
+from google.appengine.api import users
 
 from .models import Character, CharacterClass
 from .forms import CharacterForm, CharacterClassFormset, EquipmentFormset, AttacksAndSpellcastingFormset, SpellsFormset
@@ -220,3 +223,15 @@ class CharacterUpdateView(generic.UpdateView):
             return base_qs.filter(user=self.request.user)
         except:
             raise Http404('Only the creator may edit this character')
+
+def login(request):
+    """Redirects to the Google App Engine authentication page."""
+
+    url = users.create_login_url(dest_url=request.GET.get('next'))
+    return HttpResponseRedirect(url)
+
+def logout(requesr):
+    """Redirects to the homepage after logging the user out."""
+
+    url = users.create_logout_url(reverse('index'))
+    return HttpResponseRedirect(url)
