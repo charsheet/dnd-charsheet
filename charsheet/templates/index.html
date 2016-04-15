@@ -1,168 +1,25 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
-  <div class="top_space"></div>
 
 		<div class="container-fluid">
 			<div class="char_header">
 				Characters
 			</div>
 		</div>
-	<div class="container-fluid">
+	<div class="container">
 		<!-- Row 1 -->
 		<div class="row">
-      <div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!-- Character List -->
-            <div class="col-xs-3">
-							{% if charsheet_list %}
-						    {% for charsheet in charsheet_list %}
-						    	<a class="btn btn-default btn-lg btn_nav" href="/{{ charsheet.id }}/">
-											{{ charsheet.character_name }}
-									</a>
-						    {% endfor %}
-							{% endif %}
-						</div>
-
-						<!--  -->
-						<div class="col-xs-3">2</div>
-
-						<!--  -->
-						<div class="col-xs-3">3</div>
-
-						<!--  -->
-						<div class="col-xs-3">4</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">5</div>
-
-						<!--  -->
-						<div class="col-xs-3">6</div>
-
-						<!--  -->
-						<div class="col-xs-3">7</div>
-
-						<!--  -->
-						<div class="col-xs-3">8</div>
-
-					</div>
-        </div>
-      </div>
-			<div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">9</div>
-
-						<!--  -->
-						<div class="col-xs-3">10</div>
-
-						<!--  -->
-						<div class="col-xs-3">11</div>
-
-						<!--  -->
-						<div class="col-xs-3">12</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">13</div>
-
-						<!--  -->
-						<div class="col-xs-3">14</div>
-
-						<!--  -->
-						<div class="col-xs-3">15</div>
-
-						<!--  -->
-						<div class="col-xs-3">16</div>
-
-					</div>
-        </div>
-      </div>
-    </div>
-
-		<!-- Row 2 -->
-		<div class="row">
-      <div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">1</div>
-
-						<!--  -->
-						<div class="col-xs-3">2</div>
-
-						<!--  -->
-						<div class="col-xs-3">3</div>
-
-						<!--  -->
-						<div class="col-xs-3">4</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">5</div>
-
-						<!--  -->
-						<div class="col-xs-3">6</div>
-
-						<!--  -->
-						<div class="col-xs-3">7</div>
-
-						<!--  -->
-						<div class="col-xs-3">8</div>
-
-					</div>
-        </div>
-      </div>
-			<div class="col-xs-6">
-        <div class="row">
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">9</div>
-
-						<!--  -->
-						<div class="col-xs-3">10</div>
-
-						<!--  -->
-						<div class="col-xs-3">11</div>
-
-						<!--  -->
-						<div class="col-xs-3">12</div>
-
-					</div>
-
-          <div class="col-xs-6">
-
-						<!--  -->
-            <div class="col-xs-3">13</div>
-
-						<!--  -->
-						<div class="col-xs-3">14</div>
-
-						<!--  -->
-						<div class="col-xs-3">15</div>
-
-						<!--  -->
-						<div class="col-xs-3">16</div>
-
-					</div>
-        </div>
-      </div>
+			<!-- Character List -->
+				{% if charsheet_list %}
+			    {% for charsheet in charsheet_list %}
+				    	<a href="/{{ charsheet.id }}/">
+                <img src="{% static 'charsheet/images/warrior-default.svg' %}" alt="" />
+									{{ charsheet.character_name }}
+							</a>
+			    {% endfor %}
+				{% endif %}
     </div>
 
 	</div>
