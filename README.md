@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/moreisee/dnd-charsheet.svg?branch=master)](https://travis-ci.org/moreisee/dnd-charsheet)
-[![Coverage Status](https://coveralls.io/repos/github/moreisee/dnd-charsheet/badge.svg?branch=master&service=github)](https://coveralls.io/github/moreisee/dnd-charsheet?branch=master)
+[![Build Status](https://travis-ci.org/charsheet/dnd-charsheet.svg?branch=master)](https://travis-ci.org/charsheet/dnd-charsheet)
+[![Coverage Status](https://coveralls.io/repos/github/charsheet/dnd-charsheet/badge.svg?branch=master&service=github)](https://coveralls.io/github/charsheet/dnd-charsheet?branch=master)
 
 README for dnd-charsheet
 
