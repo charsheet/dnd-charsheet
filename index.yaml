@@ -36,6 +36,11 @@ indexes:
   - name: __key__
     direction: desc
 
+- kind: charsheet_charsheetaccess
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: charsheet_equipment
   properties:
   - name: __key__

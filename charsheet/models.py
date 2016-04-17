@@ -298,3 +298,8 @@ class Spells(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     prepared = models.BooleanField()
+
+class CharsheetAccess(models.Model):
+    charsheet = models.ForeignKey(Character)
+    user = models.ForeignKey(GaeDatastoreUser)
+    edit = models.BooleanField()
