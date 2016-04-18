@@ -99,6 +99,9 @@ class CharacterCreateView(generic.CreateView):
         user = self.request.user
         form.instance.user = user
 
+        users_with_access = self.request.user
+        form.instance.users_with_access = users_with_access
+
         return super(CharacterCreateView, self).form_valid(form)
         #return HttpResponseRedirect(self.get_success_url())
 
