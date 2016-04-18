@@ -41,7 +41,7 @@ class Character(models.Model):
     )
 
     user = models.ForeignKey(GaeDatastoreUser, blank=True, null=True)
-    users_with_access = fields.RelatedSetField(GaeDatastoreUser)
+    users_with_access = fields.RelatedSetField(GaeDatastoreUser, blank=True)
 
     # Char Details
     player_name = models.CharField(max_length=100, blank=True)

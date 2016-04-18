@@ -39,6 +39,7 @@ class CharacterViewsTest(TestCase):
     def create_character(self):
         self.test_user = User.objects.pre_create_google_user(email='admin@example.com')
         character_data.update({'user': self.test_user})
+        character_data.update({'users_with_access': [self.test_user]})
         Character.objects.create(**character_data)
 
     def test_display_all_characters_logged_in_index(self):
@@ -61,6 +62,7 @@ class CharacterDetailViewTest(TestCase):
 
         self.test_user = User.objects.pre_create_google_user(email='admin@example.com')
         character_data.update({'user': self.test_user})
+        character_data.update({'users_with_access': [self.test_user]})
         self.character = Character.objects.create(**character_data)
 
     def tearDown(self):
@@ -97,6 +99,7 @@ class CharacterUpdateViewTest(TestCase):
 
         self.test_user = User.objects.pre_create_google_user(email='admin@example.com')
         character_data.update({'user': self.test_user})
+        character_data.update({'users_with_access': [self.test_user]})
         self.character = Character.objects.create(**character_data)
 
     def tearDown(self):
