@@ -63,6 +63,11 @@ indexes:
   - name: __key__
     direction: desc
 
+- kind: djangae_group
+  properties:
+  - name: __key__
+    direction: desc
+
 - kind: django_admin_log
   properties:
   - name: user_id

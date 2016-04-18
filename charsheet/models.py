@@ -41,6 +41,7 @@ class Character(models.Model):
     )
 
     user = models.ForeignKey(GaeDatastoreUser, blank=True, null=True)
+    users_with_access = fields.RelatedSetField(GaeDatastoreUser)
 
     # Char Details
     player_name = models.CharField(max_length=100, blank=True)
@@ -298,8 +299,3 @@ class Spells(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     prepared = models.BooleanField()
-
-class CharsheetAccess(models.Model):
-    charsheet = models.ForeignKey(Character)
-    user = models.ForeignKey(GaeDatastoreUser)
-    edit = models.BooleanField()

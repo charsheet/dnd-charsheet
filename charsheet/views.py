@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.views import generic
 from django.http import Http404
@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """ Return the users Character List """
         if self.request.user.is_authenticated():
-            return Character.objects.filter(user=self.request.user)
+            return Character.objects.filter(users_with_access=self.request.user)
         else:
             return
 
@@ -119,6 +119,12 @@ class CharacterDetailView(generic.DetailView):
     model = Character
     template_name = 'detail.html'
 
+    def get_queryset(self):
+        try:
+            base_qs = super(CharacterDetailView, self).get_queryset()
+            return base_qs.filter(users_with_access=self.request.user)
+        except:
+            raise Http404('Only the creator may edit this character')
 
 class CharacterUpdateView(generic.UpdateView):
     model = Character
@@ -217,6 +223,6 @@ class CharacterUpdateView(generic.UpdateView):
     def get_queryset(self):
         try:
             base_qs = super(CharacterUpdateView, self).get_queryset()
-            return base_qs.filter(user=self.request.user)
+            return base_qs.filter(users_with_access=self.request.user)
         except:
             raise Http404('Only the creator may edit this character')
