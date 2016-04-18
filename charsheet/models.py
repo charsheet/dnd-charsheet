@@ -40,8 +40,8 @@ class Character(models.Model):
         (CHAOTIC_EVIL, 'Chaotic Evil'),
     )
 
-    user = models.ForeignKey(GaeDatastoreUser, blank=True, null=True)
-    users_with_access = fields.RelatedSetField(GaeDatastoreUser, blank=True)
+    user = models.ForeignKey(GaeDatastoreUser, blank=True, null=True, related_name='user')
+    users_with_access = fields.RelatedSetField(GaeDatastoreUser, blank=True, related_name='access_user')
 
     # Char Details
     player_name = models.CharField(max_length=100, blank=True)
