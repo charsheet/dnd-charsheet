@@ -269,6 +269,8 @@ class Character(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pk': self.pk})
 
+    class Meta:
+        verbose_name_plural = "Characters"
 
 class CharacterClass(models.Model):
     """
@@ -278,6 +280,9 @@ class CharacterClass(models.Model):
     char_class = models.CharField(max_length=200)
     level = models.IntegerField(null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = "Character Classes"
+
 class Equipment(models.Model):
     character = models.ForeignKey(Character)
     value = models.CharField(max_length=50, blank=True)
@@ -286,6 +291,9 @@ class Equipment(models.Model):
     quantity = models.IntegerField()
     weight = models.IntegerField(null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = "Equipment"
+
 class AttacksAndSpellcasting(models.Model):
     character = models.ForeignKey(Character)
     attack = models.CharField(max_length=50)
@@ -293,9 +301,15 @@ class AttacksAndSpellcasting(models.Model):
     damage = models.CharField(max_length=50)
     damage_type = models.CharField(max_length=50)
 
+    class Meta:
+        verbose_name_plural = "Attacks and Spellcastings"
+
 class Spells(models.Model):
     character = models.ForeignKey(Character)
     level_or_cantrip = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     description = models.TextField()
     prepared = models.BooleanField()
+
+    class Meta:
+        verbose_name_plural = "Spells"
