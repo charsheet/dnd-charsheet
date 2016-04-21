@@ -30,7 +30,7 @@ TEMPLATE_DEBUG = True
 
 # Application definition
 
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'djangae', # Djangae needs to come before django apps in django 1.7 and above
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,9 +44,19 @@ INSTALLED_APPS = (
     'djangae.contrib.gauth.datastore',
     'djangae.contrib.security',
     # 'djangae.contrib.uniquetool',
-    'charsheet.apps.CharsheetConfig',
+)
+
+THIRD_PARTY_APPS = (
     'widget_tweaks',
 )
+
+LOCAL_APPS = (
+    'charsheet.apps.CharsheetConfig',
+    'spells.apps.SpellsConfig',
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
 
 MIDDLEWARE_CLASSES = (
     'djangae.contrib.security.middleware.AppEngineSecurityMiddleware',
